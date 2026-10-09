@@ -1,33 +1,35 @@
-# WebGIS Avança Chapada
+# Plataforma Avança Chapada Bahia
 
-Mapa interativo do território do projeto Avança Chapada (ABDI / SENAI CIMATEC), exportado do QGIS (`AvançaChapada.qgz`) com o qgis2web/Leaflet.
+Mapa interativo com as bases georreferenciadas do Território de Identidade Chapada Diamantina (BA), organizadas por tópico.
 
 🔗 https://geotecama.github.io/webgis_avanca_chapada/
 
-## Camadas
+## Tópicos
 
-| Camada | Tipo | Visível ao abrir |
-|---|---|---|
-| Setores censitários 2022 | polígono | sim |
-| Rodovias federais (SEINFRA) | linha | sim |
-| Regiões / áreas de uso e cobertura | polígono | não |
-| Hidrografia SNIRH BHO 2017 | linha | não |
-| Helipontos privados (ANAC) | ponto | não |
-| Aeródromos privados (ANAC) | ponto | não |
-| Aeródromos públicos (ANAC) | ponto | não |
-| Bacias hidrográficas (micro) | polígono | não |
-| Municípios BA 2023 | polígono | não |
-| Limite do território | polígono | não |
-| Domínios | polígono | não |
-| Mapas de fundo: OSM e Google Satellite | raster | OSM |
+| Tópico | Camadas |
+|---|---|
+| Divisão político-administrativa | Território de Identidade, municípios (IBGE 2023), setores censitários (IBGE 2022) |
+| Infraestrutura logística | Rodovias federais (SEINFRA), aeródromos públicos e privados, helipontos (ANAC) |
+| Recursos hídricos | Hidrografia (ANA/SNIRH BHO 2017), microrregiões e bacias hidrográficas |
+| Geologia e hidrogeologia | Domínios hidrogeológicos |
 
-As duas camadas "Curso d'água 1:100.000 (SEI)" estão vazias no projeto e ficaram de fora.
+## Como atualizar
 
-## Ferramentas
+Tudo sai do projeto `AvançaChapada.qgz`:
 
-Lista de camadas expandida, medição métrica, busca de endereço (Nominatim), geolocalização e popups com atributos.
+- **Tópicos** = grupos do painel de camadas do QGIS. Arraste uma camada para um grupo para mudá-la de tópico; crie um grupo para criar um tópico.
+- **Nome, estilo, visibilidade inicial e ordem** das camadas vêm do QGIS (símbolo único, categorizado ou graduado).
+- **Apelidos de campos** (Propriedades da camada > Campos > Alias) aparecem nos popups.
+- **Textos** (glossário, perguntas, contato, rodapé) ficam em `conteudo.js`, que a sincronização não sobrescreve.
 
-## Atualizar
+Depois, no QGIS: **Web > Sincronizar WebGIS GitHub > Sincronizar WebGIS → GitHub** (ou o botão na barra de ferramentas).
 
-1. Edite o projeto no QGIS e reexporte para esta pasta (qgis2web, Leaflet, sobrescrevendo `index.html`, `data/`, etc.).
-2. Execute `publicar_github.bat`.
+## Estrutura
+
+```
+index.html          página (gerada pelo plugin)
+assets/             app.js, style.css, logo.svg (gerados pelo plugin)
+conteudo.js         textos editáveis
+data/camadas.json   tópicos, camadas e estilos
+data/*.geojson      dados (WGS 84, 6 casas decimais), também usados no botão de download
+```
