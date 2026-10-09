@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"xy_coordinate_resolution": 1e-06,
+"features": [
+{"type":"Feature","properties":{"cód_oaci":"SIUW","ciad":"BA0099","nome":"Comandante Milton Tosto","município":"Bonito","uf":"BA","lat":"12° 0' 20\" S","long":"41° 18' 16\" W","alt":"1020 m","operação":"VFR Diurna","designaç":"12/30","compriment":"995 m","largura":"26 m","resistênc":"5700Kg/0,50MPa","superfíci":"Piçarra","portaria_a":"3137-2015"},"geometry":{"type":"MultiPoint","coordinates":[[-41.304444,-12.005556]]}},
+{"type":"Feature","properties":{"cód_oaci":"SJIR","ciad":"BA0113","nome":"Engenheiro Joaquim Martins","município":"Iramaia","uf":"BA","lat":"13° 18' 28\" S","long":"40° 52' 58\" W","alt":"528 m","operação":"VFR Diurna","designaç":"01/19","compriment":"1200 m","largura":"30 m","resistênc":"26/F/B/X/T","superfíci":"Asfalto","portaria_a":"1046-2011"},"geometry":{"type":"MultiPoint","coordinates":[[-40.882778,-13.307778]]}},
+{"type":"Feature","properties":{"cód_oaci":"SSFW","ciad":"BA0157","nome":"Fazenda Progresso","município":"Mucugê","uf":"BA","lat":"13° 9' 26\" S","long":"41° 30' 26\" W","alt":"1170 m","operação":"VFR Diurna/Noturna","designaç":"07/25","compriment":"1240 m","largura":"20 m","resistênc":"5700kg/0,63MPa","superfíci":"Asfalto","portaria_a":"1285-2015"},"geometry":{"type":"MultiPoint","coordinates":[[-41.507222,-13.157222]]}},
+{"type":"Feature","properties":{"cód_oaci":"SSYI","ciad":"BA0171","nome":"Fazenda Sesmarias","município":"Itaeté","uf":"BA","lat":"13° 3' 22\" S","long":"40° 50' 3\" W","alt":"341 m","operação":"VFR Diurna/Noturna","designaç":"07/25","compriment":"990 m","largura":"18 m","resistênc":"10/F/A/Y/T","superfíci":"Asfalto","portaria_a":"3312-2018"},"geometry":{"type":"MultiPoint","coordinates":[[-40.834167,-13.056111]]}},
+{"type":"Feature","properties":{"cód_oaci":"SJAL","ciad":"BA0101","nome":"Lagoa Grande","município":"Iramaia","uf":"BA","lat":"13° 24' 14\" S","long":"41° 0' 43\" W","alt":"642 m","operação":"VFR Diurna","designaç":"13/31","compriment":"1140 m","largura":"18 m","resistênc":"6/F/C/Y/T","superfíci":"Asfalto","portaria_a":"3537-2016"},"geometry":{"type":"MultiPoint","coordinates":[[-41.011944,-13.403889]]}}
+]
+}

@@ -1,0 +1,244 @@
+{
+ "title": "Plataforma Avança Chapada Bahia",
+ "generated": "2026-10-08T21:12:48",
+ "boundary": "territorio-de-identidade-chapada-diamantina",
+ "topics": [
+  {
+   "name": "Divisão político-administrativa",
+   "layers": [
+    {
+     "id": "territorio-de-identidade-chapada-diamantina",
+     "name": "Território de Identidade Chapada Diamantina",
+     "file": "data/territorio-de-identidade-chapada-diamantina.geojson",
+     "geom": "polygon",
+     "visible": false,
+     "count": 1,
+     "style": {
+      "type": "single",
+      "sym": {
+       "fill": "#c43c39",
+       "fillOpacity": 0.55,
+       "stroke": "#232323",
+       "strokeOpacity": 1.0,
+       "width": 1
+      }
+     },
+     "aliases": {}
+    },
+    {
+     "id": "municipios-ibge-2023",
+     "name": "Municípios (IBGE 2023)",
+     "file": "data/municipios-ibge-2023.geojson",
+     "geom": "polygon",
+     "visible": true,
+     "count": 24,
+     "style": {
+      "type": "single",
+      "sym": {
+       "stroke": "#000000",
+       "strokeOpacity": 1.0,
+       "width": 2.1
+      }
+     },
+     "aliases": {}
+    },
+    {
+     "id": "setores-censitarios-ibge-2022",
+     "name": "Setores censitários (IBGE 2022)",
+     "file": "data/setores-censitarios-ibge-2022.geojson",
+     "geom": "polygon",
+     "visible": true,
+     "count": 1153,
+     "style": {
+      "type": "single",
+      "sym": {
+       "stroke": "#e41a1c",
+       "strokeOpacity": 1.0,
+       "width": 1
+      }
+     },
+     "aliases": {}
+    }
+   ]
+  },
+  {
+   "name": "Infraestrutura logística",
+   "layers": [
+    {
+     "id": "rodovias-federais-seinfra",
+     "name": "Rodovias federais (SEINFRA)",
+     "file": "data/rodovias-federais-seinfra.geojson",
+     "geom": "line",
+     "visible": true,
+     "count": 43,
+     "style": {
+      "type": "single",
+      "sym": {
+       "stroke": "#000000",
+       "strokeOpacity": 1.0,
+       "width": 2.5
+      }
+     },
+     "aliases": {}
+    },
+    {
+     "id": "aerodromos-publicos-anac",
+     "name": "Aeródromos públicos (ANAC)",
+     "file": "data/aerodromos-publicos-anac.geojson",
+     "geom": "point",
+     "visible": false,
+     "count": 7,
+     "style": {
+      "type": "single",
+      "sym": {
+       "fill": "#becf50",
+       "fillOpacity": 1.0,
+       "stroke": "#ffffff",
+       "width": 1,
+       "radius": 5
+      }
+     },
+     "aliases": {}
+    },
+    {
+     "id": "aerodromos-privados-anac",
+     "name": "Aeródromos privados (ANAC)",
+     "file": "data/aerodromos-privados-anac.geojson",
+     "geom": "point",
+     "visible": false,
+     "count": 5,
+     "style": {
+      "type": "single",
+      "sym": {
+       "fill": "#d5b43c",
+       "fillOpacity": 1.0,
+       "stroke": "#ffffff",
+       "width": 1,
+       "radius": 5
+      }
+     },
+     "aliases": {}
+    },
+    {
+     "id": "helipontos-privados-anac",
+     "name": "Helipontos privados (ANAC)",
+     "file": "data/helipontos-privados-anac.geojson",
+     "geom": "point",
+     "visible": false,
+     "count": 1,
+     "style": {
+      "type": "single",
+      "sym": {
+       "fill": "#e5b636",
+       "fillOpacity": 1.0,
+       "stroke": "#ffffff",
+       "width": 1,
+       "radius": 5
+      }
+     },
+     "aliases": {}
+    }
+   ]
+  },
+  {
+   "name": "Recursos hídricos",
+   "layers": [
+    {
+     "id": "hidrografia-ana-snirh-bho-2017",
+     "name": "Hidrografia (ANA/SNIRH BHO 2017)",
+     "file": "data/hidrografia-ana-snirh-bho-2017.geojson",
+     "geom": "line",
+     "visible": false,
+     "count": 2966,
+     "style": {
+      "type": "single",
+      "sym": {
+       "stroke": "#becf50",
+       "strokeOpacity": 1.0,
+       "width": 1
+      }
+     },
+     "aliases": {}
+    },
+    {
+     "id": "microrregioes-hidrograficas",
+     "name": "Microrregiões hidrográficas",
+     "file": "data/microrregioes-hidrograficas.geojson",
+     "geom": "polygon",
+     "visible": false,
+     "count": 6,
+     "style": {
+      "type": "single",
+      "sym": {
+       "fill": "#8d5a99",
+       "fillOpacity": 0.55,
+       "stroke": "#232323",
+       "strokeOpacity": 1.0,
+       "width": 1
+      }
+     },
+     "aliases": {}
+    },
+    {
+     "id": "bacias-hidrograficas",
+     "name": "Bacias hidrográficas",
+     "file": "data/bacias-hidrograficas.geojson",
+     "geom": "polygon",
+     "visible": false,
+     "count": 6,
+     "style": {
+      "type": "single",
+      "sym": {
+       "fill": "#8d5a99",
+       "fillOpacity": 0.55,
+       "stroke": "#232323",
+       "strokeOpacity": 1.0,
+       "width": 1
+      }
+     },
+     "aliases": {}
+    }
+   ]
+  },
+  {
+   "name": "Geologia e hidrogeologia",
+   "layers": [
+    {
+     "id": "dominios-hidrogeologicos",
+     "name": "Domínios hidrogeológicos",
+     "file": "data/dominios-hidrogeologicos.geojson",
+     "geom": "polygon",
+     "visible": false,
+     "count": 48,
+     "style": {
+      "type": "single",
+      "sym": {
+       "fill": "#91522d",
+       "fillOpacity": 0.55,
+       "stroke": "#232323",
+       "strokeOpacity": 1.0,
+       "width": 1
+      }
+     },
+     "aliases": {}
+    }
+   ]
+  }
+ ],
+ "basemaps": [
+  {
+   "name": "OpenStreetMap",
+   "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+   "maxZoom": 19,
+   "attribution": "© colaboradores do OpenStreetMap",
+   "visible": true
+  },
+  {
+   "name": "Google Satélite",
+   "url": "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
+   "maxZoom": 19,
+   "attribution": "© Google",
+   "visible": false
+  }
+ ]
+}

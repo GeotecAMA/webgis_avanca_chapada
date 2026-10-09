@@ -1,0 +1,7 @@
+{
+"type": "FeatureCollection",
+"xy_coordinate_resolution": 1e-06,
+"features": [
+{"type":"Feature","properties":{"cód_oaci":"SJJA","ciad":"BA0205","nome":"André Sampaio","município":"Palmeiras","uf":"BA","lat":"12° 39' 7\" S","long":"41° 29' 26\" W","alt":"953 m","operação":"VFR Diurna","rampa_de_a":"17","formato_á":"Quadrado","dimensões":"21 m x21 m","resistênc":"4 t","superfíci":"Grama","cadastro":"0188-2017","portaria_a":"0188-2017"},"geometry":{"type":"MultiPoint","coordinates":[[-41.490556,-12.651944]]}}
+]
+}
