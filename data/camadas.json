@@ -1,6 +1,6 @@
 {
  "title": "Plataforma Avança Chapada Bahia",
- "generated": "2026-10-08T21:39:46",
+ "generated": "2026-10-08T21:47:21",
  "boundary": "territorio-de-identidade-chapada-diamantina",
  "topics": [
   {
@@ -50,7 +50,7 @@
      "sub": null,
      "file": "data/setores-censitarios-ibge-2022.geojson",
      "geom": "polygon",
-     "visible": true,
+     "visible": false,
      "count": 1153,
      "style": {
       "type": "single",
@@ -222,14 +222,88 @@
      "visible": false,
      "count": 48,
      "style": {
-      "type": "single",
-      "sym": {
-       "fill": "#91522d",
-       "fillOpacity": 0.55,
-       "stroke": "#232323",
-       "strokeOpacity": 1.0,
-       "width": 1
-      }
+      "type": "categorized",
+      "field": "SUBDOM",
+      "classes": [
+       {
+        "value": "Cristalino",
+        "label": "Cristalino",
+        "sym": {
+         "fill": "#00ff00",
+         "fillOpacity": 0.55,
+         "stroke": "#5a5a5a",
+         "strokeOpacity": 1.0,
+         "width": 1
+        }
+       },
+       {
+        "value": "Metassedimentos-Metavulcânicas",
+        "label": "Metassedimentos-Metavulcânicas",
+        "sym": {
+         "fill": "#ccff66",
+         "fillOpacity": 0.55,
+         "stroke": "#5a5a5a",
+         "strokeOpacity": 1.0,
+         "width": 1
+        }
+       },
+       {
+        "value": "Vulcânicas",
+        "label": "Vulcânicas",
+        "sym": {
+         "fill": "#99ff00",
+         "fillOpacity": 0.55,
+         "stroke": "#5a5a5a",
+         "strokeOpacity": 1.0,
+         "width": 1
+        }
+       },
+       {
+        "value": "Bacia tipo Rio do Peixe",
+        "label": "Carbonatos-Metacarbonatos",
+        "sym": {
+         "fill": "#ccccf0",
+         "fillOpacity": 0.55,
+         "stroke": "#5a5a5a",
+         "strokeOpacity": 1.0,
+         "width": 1
+        }
+       },
+       {
+        "value": "Poroso/Fissural",
+        "label": "Poroso/Fissural",
+        "sym": {
+         "fill": "#8a7063",
+         "fillOpacity": 0.55,
+         "stroke": "#5a5a5a",
+         "strokeOpacity": 1.0,
+         "width": 1
+        }
+       },
+       {
+        "value": "Formações cenozóicas indiferenciadas",
+        "label": "Formações cenozóicas – indiferenciadas",
+        "sym": {
+         "fill": "#99b8ff",
+         "fillOpacity": 0.55,
+         "stroke": "#5a5a5a",
+         "strokeOpacity": 1.0,
+         "width": 1
+        }
+       },
+       {
+        "value": "Aluviões",
+        "label": "Formações cenozóicas – Aluviões",
+        "sym": {
+         "fill": "#99ffff",
+         "fillOpacity": 0.55,
+         "stroke": "#5a5a5a",
+         "strokeOpacity": 1.0,
+         "width": 1
+        }
+       }
+      ],
+      "other": null
      },
      "aliases": {}
     }
