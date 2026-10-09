@@ -80,6 +80,7 @@
   }
   function swatch(s, geom) {
     const st = s.stroke || "none", w = Math.min(s.width ?? 1, 3), dash = s.dash ? ` stroke-dasharray="${s.dash}"` : "";
+    if (s.icon) return `<img class="swatch" src="${esc(s.icon)}" alt="">`;
     if (geom === "point")
       return `<svg class="swatch" viewBox="0 0 18 18"><circle cx="9" cy="9" r="5.5" fill="${s.fill || "none"}" fill-opacity="${s.fillOpacity ?? 1}" stroke="${st}" stroke-width="${Math.max(w, 1)}"/></svg>`;
     if (geom === "line")
@@ -101,9 +102,14 @@
     return L.geoJSON(data, {
       pane, renderer: renderers[pane],
       style: f => pathStyle(symFor(def.style, f.properties || {}), def.geom),
-      pointToLayer: (f, latlng) => L.circleMarker(latlng, {
-        pane, renderer: renderers[pane], ...pointStyle(symFor(def.style, f.properties || {})),
-      }),
+      pointToLayer: (f, latlng) => {
+        const s = symFor(def.style, f.properties || {});
+        if (s.icon) {
+          const z = s.size || 24;
+          return L.marker(latlng, { pane, icon: L.icon({ iconUrl: s.icon, iconSize: [z, z], iconAnchor: [z / 2, z / 2], popupAnchor: [0, -z / 2] }) });
+        }
+        return L.circleMarker(latlng, { pane, renderer: renderers[pane], ...pointStyle(s) });
+      },
       onEachFeature: (f, lyr) => lyr.bindPopup(() => popupHtml(def, f.properties), { maxWidth: 360 }),
     });
   }

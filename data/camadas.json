@@ -1,6 +1,6 @@
 {
  "title": "Plataforma Avança Chapada Bahia",
- "generated": "2026-10-08T21:31:26",
+ "generated": "2026-10-08T21:32:06",
  "boundary": "territorio-de-identidade-chapada-diamantina",
  "topics": [
   {
@@ -249,11 +249,11 @@
      "style": {
       "type": "single",
       "sym": {
-       "fill": "#232323",
-       "stroke": "#232323",
+       "size": 23,
+       "radius": 11.5,
+       "stroke": "#ffffff",
        "width": 1,
-       "fillOpacity": 0.5,
-       "radius": 6
+       "icon": "data/icons/lixao-saco.svg"
       }
      },
      "aliases": {
@@ -275,7 +275,7 @@
    "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
    "maxZoom": 19,
    "attribution": "© colaboradores do OpenStreetMap",
-   "visible": true
+   "visible": false
   },
   {
    "name": "Google Satélite",
