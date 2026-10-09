@@ -1,6 +1,6 @@
 {
  "title": "Plataforma Avança Chapada Bahia",
- "generated": "2026-10-08T22:45:21",
+ "generated": "2026-10-08T22:47:46",
  "boundary": "territorio-de-identidade-chapada-diamantina",
  "topics": [
   {
@@ -183,6 +183,28 @@
       }
      },
      "aliases": {}
+    },
+    {
+     "id": "cursos-d-agua-ibge-bc250-2025",
+     "name": "Cursos d'água (IBGE BC250 2025)",
+     "sub": null,
+     "file": "data/cursos-d-agua-ibge-bc250-2025.geojson",
+     "geom": "line",
+     "visible": false,
+     "count": 3656,
+     "style": {
+      "type": "single",
+      "sym": {
+       "stroke": "#0000cd",
+       "strokeOpacity": 1.0,
+       "width": 1
+      }
+     },
+     "aliases": {
+      "nome": "Nome",
+      "regime": "Regime",
+      "navegavel": "Navegável"
+     }
     },
     {
      "id": "microrregioes-hidrograficas",
@@ -896,6 +918,29 @@
       "descricao": "Descrição",
       "sug_interv": "Sugestão de intervenção",
       "orgao_exec": "Órgão executor"
+     }
+    },
+    {
+     "id": "terrenos-sujeitos-a-inundacao-sei-1-100-000",
+     "name": "Terrenos sujeitos a inundação (SEI 1:100.000)",
+     "sub": "Suscetibilidade a inundação",
+     "file": "data/terrenos-sujeitos-a-inundacao-sei-1-100-000.geojson",
+     "geom": "polygon",
+     "visible": false,
+     "count": 15,
+     "style": {
+      "type": "single",
+      "sym": {
+       "fill": "#00ff26",
+       "fillOpacity": 0.0,
+       "stroke": "#0000cd",
+       "strokeOpacity": 1.0,
+       "width": 1.5
+      }
+     },
+     "aliases": {
+      "nome": "Nome",
+      "periodicid": "Periodicidade"
      }
     },
     {
