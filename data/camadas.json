@@ -1,6 +1,6 @@
 {
  "title": "Plataforma Avança Chapada Bahia",
- "generated": "2026-10-08T22:27:37",
+ "generated": "2026-10-08T22:45:21",
  "boundary": "territorio-de-identidade-chapada-diamantina",
  "topics": [
   {
@@ -828,6 +828,170 @@
       "other": null
      },
      "aliases": {}
+    }
+   ]
+  },
+  {
+   "name": "Vulnerabilidade climática",
+   "layers": [
+    {
+     "id": "setores-de-risco-geologico-e-hidrologico-sgb",
+     "name": "Setores de risco geológico e hidrológico (SGB)",
+     "sub": "Suscetibilidade a inundação",
+     "file": "data/setores-de-risco-geologico-e-hidrologico-sgb.geojson",
+     "geom": "polygon",
+     "visible": false,
+     "count": 14,
+     "style": {
+      "type": "categorized",
+      "field": "grau_risco",
+      "classes": [
+       {
+        "value": "Muito alto",
+        "label": "Muito alto",
+        "sym": {
+         "fill": "#070059",
+         "fillOpacity": 0.55,
+         "stroke": "#e90700",
+         "strokeOpacity": 1.0,
+         "width": 2.3
+        }
+       },
+       {
+        "value": "Alto",
+        "label": "Alto",
+        "sym": {
+         "fill": "#900759",
+         "fillOpacity": 0.55,
+         "stroke": "#df9007",
+         "strokeOpacity": 1.0,
+         "width": 2.3
+        }
+       },
+       {
+        "value": "Médio",
+        "label": "Médio",
+        "sym": {
+         "fill": "#ff0759",
+         "fillOpacity": 0.55,
+         "stroke": "#dfff07",
+         "strokeOpacity": 1.0,
+         "width": 2.3
+        }
+       }
+      ],
+      "other": null
+     },
+     "aliases": {
+      "municipio": "Município",
+      "num_setor": "Setor",
+      "local": "Local",
+      "tipolo_g1": "Tipologia",
+      "tipolo_e1": "Tipologia específica",
+      "tipolo_g2": "Tipologia secundária",
+      "grau_risco": "Grau de risco",
+      "grau_vulne": "Vulnerabilidade",
+      "num_edif": "Edificações",
+      "num_pess": "Pessoas",
+      "descricao": "Descrição",
+      "sug_interv": "Sugestão de intervenção",
+      "orgao_exec": "Órgão executor"
+     }
+    },
+    {
+     "id": "semiarido-delimitacao-sudene-2021",
+     "name": "Semiárido – delimitação SUDENE 2021",
+     "sub": "Áreas suscetíveis à desertificação",
+     "file": "data/semiarido-delimitacao-sudene-2021.geojson",
+     "geom": "polygon",
+     "visible": false,
+     "count": 1,
+     "style": {
+      "type": "single",
+      "sym": {
+       "fill": "#b05099",
+       "fillOpacity": 0.55,
+       "stroke": "#b07a1f",
+       "strokeOpacity": 1.0,
+       "width": 1.9
+      }
+     },
+     "aliases": {
+      "nm_semiari": "Região"
+     }
+    },
+    {
+     "id": "isoietas-precipitacao-media-anual-19772006-mm",
+     "name": "Isoietas – precipitação média anual 1977–2006 (mm)",
+     "sub": "Precipitação média anual",
+     "file": "data/isoietas-precipitacao-media-anual-19772006-mm.geojson",
+     "geom": "line",
+     "visible": false,
+     "count": 7,
+     "style": {
+      "type": "categorized",
+      "field": "PCP_NU_ISO",
+      "classes": [
+       {
+        "value": 500,
+        "label": "500 mm",
+        "sym": {
+         "stroke": "#ff0000",
+         "strokeOpacity": 1.0,
+         "width": 2.3
+        }
+       },
+       {
+        "value": 600,
+        "label": "600 mm",
+        "sym": {
+         "stroke": "#ff5500",
+         "strokeOpacity": 1.0,
+         "width": 2.3
+        }
+       },
+       {
+        "value": 700,
+        "label": "700 mm",
+        "sym": {
+         "stroke": "#ff5500",
+         "strokeOpacity": 1.0,
+         "width": 2.3
+        }
+       },
+       {
+        "value": 800,
+        "label": "800 mm",
+        "sym": {
+         "stroke": "#ff5500",
+         "strokeOpacity": 1.0,
+         "width": 2.3
+        }
+       },
+       {
+        "value": 900,
+        "label": "900 mm",
+        "sym": {
+         "stroke": "#ff5500",
+         "strokeOpacity": 1.0,
+         "width": 2.3
+        }
+       },
+       {
+        "value": 1000,
+        "label": "1000 mm",
+        "sym": {
+         "stroke": "#ffff73",
+         "strokeOpacity": 1.0,
+         "width": 2.3
+        }
+       }
+      ],
+      "other": null
+     },
+     "aliases": {
+      "PCP_NU_ISO": "Precipitação média anual (mm)"
+     }
     }
    ]
   }
