@@ -17,8 +17,11 @@ window.CONTEUDO = {
   ],
 
   contato: {
-    texto: "Dúvidas, sugestões ou correções nos dados? Fale com a equipe do projeto.",
-    email: "",          // ex.: "contato@exemplo.org" — em branco, o campo não aparece
+    texto: "Dúvidas, sugestões ou correções nos dados? Fale com a área de Meio Ambiente do SENAI CIMATEC.",
+    area: "Meio Ambiente",
+    instituicao: "SENAI CIMATEC",
+    url: "https://senaicimatec.com.br/fale-conosco/",
+    email: "",          // opcional, ex.: "contato@exemplo.org" — em branco, o campo não aparece
     responsavel: "Equipe técnica Avança Chapada"
   },
 

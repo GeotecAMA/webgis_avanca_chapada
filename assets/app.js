@@ -370,12 +370,14 @@
     },
     contato() {
       const c = C.contato || {};
-      const org = list => (list || []).map(o => o.url ? `<a href="${esc(o.url)}" target="_blank" rel="noopener">${esc(o.nome)}</a>` : esc(o.nome)).join(", ");
-      return `<h1>Fale conosco</h1><p class="lead">${esc(c.texto || "")}</p>
-        ${c.email ? `<div class="card"><h2>E-mail</h2><a href="mailto:${esc(c.email)}">${esc(c.email)}</a>${c.responsavel ? `<p class="muted">${esc(c.responsavel)}</p>` : ""}</div>` : ""}
-        <div class="card"><h2>Sobre o projeto</h2><p>${esc(C.descricao || "")}</p>
-          ${C.realizacao?.length ? `<p><strong>Realização:</strong> ${org(C.realizacao)}</p>` : ""}
-          ${C.execucao?.length ? `<p><strong>Execução:</strong> ${org(C.execucao)}</p>` : ""}</div>`;
+      const row = (k, v) => v ? `<tr><th>${k}</th><td>${v}</td></tr>` : "";
+      return `<h1>Fale conosco</h1>
+        <div class="card contact"><table class="contact-data">
+          ${row("Área", esc(c.area))}
+          ${row("Instituição", esc(c.instituicao))}
+          ${row("Contato", c.url ? `<a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.url.replace(/^https?:\/\//, "").replace(/\/$/, ""))}</a>` : "")}
+          ${row("E-mail", c.email ? `<a href="mailto:${esc(c.email)}">${esc(c.email)}</a>` : "")}
+        </table></div>`;
     },
   };
   function route() {
