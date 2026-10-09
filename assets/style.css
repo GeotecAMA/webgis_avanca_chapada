@@ -115,6 +115,13 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .badge:empty { display: none; }
 .topic-layers { list-style: none; margin: 0 0 8px; padding: 0 0 0 28px; display: none; }
 .topic.open .topic-layers { display: block; }
+.sub { padding: 4px 0 2px; }
+.sub-name {
+  display: block; font-size: 11.5px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--brand-2); padding: 4px 0 2px; border-top: 1px dashed var(--line);
+}
+.sub ul { list-style: none; margin: 0; padding: 0 0 0 4px; border-left: 2px solid var(--brand-soft); }
+.sub .lyr { padding-left: 8px; }
 
 .chk { display: inline-flex; position: relative; flex: none; }
 .chk input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }

@@ -1,6 +1,6 @@
 {
  "title": "Plataforma Avança Chapada Bahia",
- "generated": "2026-10-08T21:15:54",
+ "generated": "2026-10-08T21:31:26",
  "boundary": "territorio-de-identidade-chapada-diamantina",
  "topics": [
   {
@@ -9,6 +9,7 @@
     {
      "id": "territorio-de-identidade-chapada-diamantina",
      "name": "Território de Identidade Chapada Diamantina",
+     "sub": null,
      "file": "data/territorio-de-identidade-chapada-diamantina.geojson",
      "geom": "polygon",
      "visible": false,
@@ -28,6 +29,7 @@
     {
      "id": "municipios-ibge-2023",
      "name": "Municípios (IBGE 2023)",
+     "sub": null,
      "file": "data/municipios-ibge-2023.geojson",
      "geom": "polygon",
      "visible": true,
@@ -45,6 +47,7 @@
     {
      "id": "setores-censitarios-ibge-2022",
      "name": "Setores censitários (IBGE 2022)",
+     "sub": null,
      "file": "data/setores-censitarios-ibge-2022.geojson",
      "geom": "polygon",
      "visible": true,
@@ -67,6 +70,7 @@
     {
      "id": "rodovias-federais-seinfra",
      "name": "Rodovias federais (SEINFRA)",
+     "sub": null,
      "file": "data/rodovias-federais-seinfra.geojson",
      "geom": "line",
      "visible": true,
@@ -84,6 +88,7 @@
     {
      "id": "aerodromos-publicos-anac",
      "name": "Aeródromos públicos (ANAC)",
+     "sub": null,
      "file": "data/aerodromos-publicos-anac.geojson",
      "geom": "point",
      "visible": false,
@@ -103,6 +108,7 @@
     {
      "id": "aerodromos-privados-anac",
      "name": "Aeródromos privados (ANAC)",
+     "sub": null,
      "file": "data/aerodromos-privados-anac.geojson",
      "geom": "point",
      "visible": false,
@@ -122,6 +128,7 @@
     {
      "id": "helipontos-privados-anac",
      "name": "Helipontos privados (ANAC)",
+     "sub": null,
      "file": "data/helipontos-privados-anac.geojson",
      "geom": "point",
      "visible": false,
@@ -146,6 +153,7 @@
     {
      "id": "hidrografia-ana-snirh-bho-2017",
      "name": "Hidrografia (ANA/SNIRH BHO 2017)",
+     "sub": null,
      "file": "data/hidrografia-ana-snirh-bho-2017.geojson",
      "geom": "line",
      "visible": false,
@@ -163,6 +171,7 @@
     {
      "id": "microrregioes-hidrograficas",
      "name": "Microrregiões hidrográficas",
+     "sub": null,
      "file": "data/microrregioes-hidrograficas.geojson",
      "geom": "polygon",
      "visible": false,
@@ -182,6 +191,7 @@
     {
      "id": "bacias-hidrograficas",
      "name": "Bacias hidrográficas",
+     "sub": null,
      "file": "data/bacias-hidrograficas.geojson",
      "geom": "polygon",
      "visible": false,
@@ -206,6 +216,7 @@
     {
      "id": "dominios-hidrogeologicos",
      "name": "Domínios hidrogeológicos",
+     "sub": null,
      "file": "data/dominios-hidrogeologicos.geojson",
      "geom": "polygon",
      "visible": false,
@@ -221,6 +232,39 @@
       }
      },
      "aliases": {}
+    }
+   ]
+  },
+  {
+   "name": "Manejo de resíduos sólidos urbanos",
+   "layers": [
+    {
+     "id": "lixoes-vazadouros-a-ceu-aberto",
+     "name": "Lixões (vazadouros a céu aberto)",
+     "sub": "Lixões",
+     "file": "data/lixoes-vazadouros-a-ceu-aberto.geojson",
+     "geom": "point",
+     "visible": true,
+     "count": 34,
+     "style": {
+      "type": "single",
+      "sym": {
+       "fill": "#232323",
+       "stroke": "#232323",
+       "width": 1,
+       "fillOpacity": 0.5,
+       "radius": 6
+      }
+     },
+     "aliases": {
+      "municipio": "Município",
+      "cod_ibge": "Código IBGE",
+      "nome_orig": "Nome na base original",
+      "n_orig": "Nº na base original",
+      "latitude": "Latitude",
+      "longitude": "Longitude",
+      "obs": "Observação"
+     }
     }
    ]
   }

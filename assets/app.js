@@ -7,7 +7,7 @@
   const C = window.CONTEUDO || {};
   const $ = (sel, el = document) => el.querySelector(sel);
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const fmt = n => Number(n).toLocaleString("pt-BR");
+  const fmt = n => Number(n).toLocaleString("pt-BR", { maximumFractionDigits: 6 });
   const ICON = {
     chevron: '<svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg>',
     zoom: '<svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>',
@@ -63,7 +63,14 @@
     }
     return style.sym;
   }
+  function pointStyle(s) {
+    return {
+      radius: s.radius || 6, stroke: (s.width ?? 1) > 0, color: s.stroke || "#fff", weight: s.width ?? 1,
+      fill: true, fillColor: s.fill || "#f29a1f", fillOpacity: s.fillOpacity ?? .9,
+    };
+  }
   function pathStyle(s, geom) {
+    if (geom === "point") return pointStyle(s);
     return {
       stroke: (s.width ?? 1) > 0, color: s.stroke || "#333", weight: s.width ?? 1,
       opacity: s.strokeOpacity ?? 1, dashArray: s.dash || null,
@@ -94,13 +101,9 @@
     return L.geoJSON(data, {
       pane, renderer: renderers[pane],
       style: f => pathStyle(symFor(def.style, f.properties || {}), def.geom),
-      pointToLayer: (f, latlng) => {
-        const s = symFor(def.style, f.properties || {});
-        return L.circleMarker(latlng, {
-          pane, renderer: renderers[pane], radius: s.radius || 6,
-          color: s.stroke || "#fff", weight: s.width ?? 1, fillColor: s.fill || "#d9822b", fillOpacity: s.fillOpacity ?? .9,
-        });
-      },
+      pointToLayer: (f, latlng) => L.circleMarker(latlng, {
+        pane, renderer: renderers[pane], ...pointStyle(symFor(def.style, f.properties || {})),
+      }),
       onEachFeature: (f, lyr) => lyr.bindPopup(() => popupHtml(def, f.properties), { maxWidth: 360 }),
     });
   }
@@ -183,10 +186,19 @@
           <button class="topic-name" type="button" aria-expanded="false">${esc(topic.name)}${ICON.chevron}</button>
           <span class="badge"></span>
         </div>
-        <ul class="topic-layers">${topic.layers.map(d => layerRow(d)).join("")}</ul>`;
+        <ul class="topic-layers">${topicBody(topic)}</ul>`;
       host.appendChild(el);
     });
     syncTopics();
+  }
+
+  // camadas soltas do tópico primeiro; depois cada subtópico com seu título
+  function topicBody(topic) {
+    const loose = topic.layers.filter(d => !d.sub);
+    const subs = [...new Set(topic.layers.filter(d => d.sub).map(d => d.sub))];
+    return loose.map(layerRow).join("") + subs.map(name =>
+      `<li class="sub"><span class="sub-name">${esc(name)}</span><ul>${topic.layers.filter(d => d.sub === name).map(layerRow).join("")}</ul></li>`
+    ).join("");
   }
 
   function layerRow(d) {
