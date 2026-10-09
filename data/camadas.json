@@ -1,6 +1,6 @@
 {
  "title": "Plataforma Avança Chapada Bahia",
- "generated": "2026-10-08T22:16:31",
+ "generated": "2026-10-08T22:27:37",
  "boundary": "territorio-de-identidade-chapada-diamantina",
  "topics": [
   {
@@ -415,6 +415,91 @@
       "ato_legal": "Ato legal",
       "criacao": "Criação",
       "fonte": "Fonte"
+     }
+    },
+    {
+     "id": "cobertura-vegetal-inema-2019-1-50-000",
+     "name": "Cobertura vegetal (INEMA 2019, 1:50.000)",
+     "sub": null,
+     "file": "data/cobertura-vegetal-inema-2019-1-50-000.geojson",
+     "geom": "polygon",
+     "visible": false,
+     "count": 17,
+     "style": {
+      "type": "categorized",
+      "field": "nivel_1",
+      "classes": [
+       {
+        "value": "Caatinga",
+        "label": "Caatinga",
+        "sym": {
+         "fill": "#e6c200",
+         "fillOpacity": 0.55,
+         "width": 0
+        }
+       },
+       {
+        "value": "Cerrado",
+        "label": "Cerrado",
+        "sym": {
+         "fill": "#ffc0a8",
+         "fillOpacity": 0.55,
+         "width": 0
+        }
+       },
+       {
+        "value": "Campo rupestre",
+        "label": "Campo rupestre",
+        "sym": {
+         "fill": "#ffa8ff",
+         "fillOpacity": 0.55,
+         "width": 0
+        }
+       },
+       {
+        "value": "Floresta Estacional",
+        "label": "Floresta Estacional",
+        "sym": {
+         "fill": "#becd89",
+         "fillOpacity": 0.55,
+         "width": 0
+        }
+       },
+       {
+        "value": "Vegetação com influência fluvial e/ou lacustre",
+        "label": "Vegetação com influência fluvial e/ou lacustre",
+        "sym": {
+         "fill": "#a8d6ff",
+         "fillOpacity": 0.55,
+         "width": 0
+        }
+       },
+       {
+        "value": "Áreas antropizadas",
+        "label": "Áreas antropizadas",
+        "sym": {
+         "fill": "#e9e9e9",
+         "fillOpacity": 0.55,
+         "width": 0
+        }
+       },
+       {
+        "value": "Rios, Lagos, Lagoas, e Corpos d'água",
+        "label": "Rios, Lagos, Lagoas, e Corpos d'água",
+        "sym": {
+         "fill": "#73fff7",
+         "fillOpacity": 0.55,
+         "width": 0
+        }
+       }
+      ],
+      "other": null
+     },
+     "aliases": {
+      "codigo": "Código",
+      "nivel_1": "Classe",
+      "nivel_2": "Subclasse",
+      "nivel_3": "Detalhamento"
      }
     },
     {
