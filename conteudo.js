@@ -9,6 +9,7 @@ window.CONTEUDO = {
 
   // Rodapé. "logo" é opcional: caminho de imagem dentro da pasta do site (ex.: "assets/abdi.png").
   realizacao: [
+    { nome: "Sistema FIEB", url: "https://www.fieb.org.br", logo: "" },
     { nome: "ABDI", url: "https://www.abdi.com.br", logo: "" }
   ],
   execucao: [

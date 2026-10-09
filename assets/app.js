@@ -164,7 +164,7 @@
     }).addTo(map);
     const outline = L.geoJSON(data, {
       pane: "outline", renderer: renderers.outline, interactive: false,
-      style: { color: "#1f3a68", weight: 3, fill: false, opacity: .95 },
+      style: { color: "#1d5e27", weight: 3, fill: false, opacity: .95 },
     }).addTo(map);
     territoryBounds = outline.getBounds();
     fitView(territoryBounds);
@@ -296,7 +296,7 @@
   map.on("locationfound", e => {
     hideStatus();
     if (locMarker) map.removeLayer(locMarker);
-    locMarker = L.circleMarker(e.latlng, { radius: 8, color: "#fff", weight: 3, fillColor: "#2b7de9", fillOpacity: 1, pane: "point" }).addTo(map);
+    locMarker = L.circleMarker(e.latlng, { radius: 8, color: "#fff", weight: 3, fillColor: "#2f9bd6", fillOpacity: 1, pane: "point" }).addTo(map);
   });
   map.on("locationerror", () => showStatus("Não foi possível obter sua localização.", 4000));
 
@@ -350,10 +350,6 @@
         <input type="search" id="gq" placeholder="Filtrar termos…" aria-label="Filtrar termos">
         <dl class="gloss" id="gl">${items.map(g => `<div data-t="${esc((g.termo + " " + g.definicao).toLowerCase())}"><dt>${esc(g.termo)}</dt><dd>${esc(g.definicao)}</dd></div>`).join("")}</dl>`;
     },
-    perguntas() {
-      return `<h1>Perguntas frequentes</h1><p class="lead">Como usar a plataforma e sobre os dados.</p>
-        <div class="faq">${(C.perguntas || []).map(p => `<details><summary>${esc(p.pergunta)}</summary><p>${esc(p.resposta)}</p></details>`).join("")}</div>`;
-    },
     contato() {
       const c = C.contato || {};
       const org = list => (list || []).map(o => o.url ? `<a href="${esc(o.url)}" target="_blank" rel="noopener">${esc(o.nome)}</a>` : esc(o.nome)).join(", ");
@@ -366,7 +362,7 @@
   };
   function route() {
     const page = (location.hash.replace("#", "").split("/")[0]) || "mapa";
-    const isMap = !/^(glossario|perguntas|contato)$/.test(page) || /^-?\d/.test(page);
+    const isMap = !/^(glossario|contato)$/.test(page) || /^-?\d/.test(page);
     document.querySelectorAll(".nav a").forEach(a => a.classList.toggle("active", a.dataset.page === (isMap ? "mapa" : page)));
     $("#nav").classList.remove("open");
     $("#page").hidden = isMap;

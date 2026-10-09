@@ -1,1 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><circle cx="32" cy="14" r="7" fill="#e8963a"/><path d="M2 39 9 25h9l4 6 6-11h11l7 19z" fill="#1f3a68"/><path d="M3 43h42" stroke="#3f7d4e" stroke-width="4" stroke-linecap="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 64">
+  <!-- símbolo Avança Chapada: sol, aerogerador, café, chapada, rio e curva verde -->
+  <g stroke="#f29a1f" stroke-width="2.6" stroke-linecap="round">
+    <path d="M20 9v5M8.5 13.5l3.5 3.5M31.5 13.5 28 17M3 25h5M37 25h-5"/>
+  </g>
+  <path d="M8 31a12 12 0 0 1 24 0z" fill="#f6b52a"/>
+  <path d="M42 30V8" stroke="#8a949c" stroke-width="1.6" stroke-linecap="round"/>
+  <g fill="#8a949c"><path d="M42 8 49 3.5l.8 1.2z"/><path d="M42 8l-1.5 8.2-1.4-.3z"/><path d="M42 8l-7.5-3.6.6-1.3z"/><circle cx="42" cy="8" r="1.4"/></g>
+  <path d="M63 11c5-6 13-5 15 0-5 3-11 3-15 0z" fill="#3f8f2f"/>
+  <path d="M60 15c-2-6 2-11 7-11 0 5-3 9-7 11z" fill="#2d6f2a"/>
+  <g fill="#d7262c"><circle cx="58" cy="20" r="3.4"/><circle cx="64.5" cy="17.5" r="3.4"/><circle cx="62.5" cy="24" r="3.4"/><circle cx="56.5" cy="26.5" r="3"/></g>
+  <path d="M70 34l3-12 4-1 2-5h9l3 6 3 1v11z" fill="#8cae3a"/>
+  <path d="M77 21l2-5h9l2 4z" fill="#c9a24b"/>
+  <path d="M2 44c18-12 44-16 92-10-30 2-58 8-80 20z" fill="#2d7a31"/>
+  <path d="M8 40c14-6 28-6 40-3s22 1 30-4c-8 8-20 11-32 8S20 37 8 40z" fill="#2f9bd6"/>
+  <path d="M14 54c22-12 50-17 80-15-26 3-50 10-70 22z" fill="#1d5e27"/>
+</svg>
