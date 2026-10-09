@@ -115,7 +115,8 @@
   }
 
   async function loadData(def) {
-    const r = await fetch(def.file);
+    // ?v=<data da exportação>: um GeoJSON novo nunca vem do cache, um inalterado continua em cache
+    const r = await fetch(`${def.file}?v=${encodeURIComponent(manifest.generated || "")}`);
     if (!r.ok) throw new Error(`${def.file}: ${r.status}`);
     return r.json();
   }
@@ -422,7 +423,8 @@
     renderFooter();
     route();
     try {
-      manifest = await (await fetch("data/camadas.json", { cache: "no-cache" })).json();
+      // ?t= fura o cache de 10 min do GitHub Pages: a lista de camadas é sempre a última publicada
+      manifest = await (await fetch(`data/camadas.json?t=${Date.now()}`, { cache: "no-store" })).json();
     } catch (e) {
       $("#topics").innerHTML = '<p class="muted">Não foi possível carregar as camadas.</p>';
       console.error(e);

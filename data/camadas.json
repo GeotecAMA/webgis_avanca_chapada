@@ -1,6 +1,6 @@
 {
  "title": "Plataforma Avança Chapada Bahia",
- "generated": "2026-10-08T22:49:26",
+ "generated": "2026-10-08T22:58:35",
  "boundary": "territorio-de-identidade-chapada-diamantina",
  "topics": [
   {
@@ -1036,6 +1036,108 @@
      },
      "aliases": {
       "PCP_NU_ISO": "Precipitação média anual (mm)"
+     }
+    },
+    {
+     "id": "temperatura-maxima-media-anual-worldclim-2-1-19702000",
+     "name": "Temperatura máxima média anual (WorldClim 2.1, 1970–2000)",
+     "sub": "Temperatura máxima",
+     "file": "data/temperatura-maxima-media-anual-worldclim-2-1-19702000.geojson",
+     "geom": "polygon",
+     "visible": false,
+     "count": 9,
+     "style": {
+      "type": "categorized",
+      "field": "faixa",
+      "classes": [
+       {
+        "value": "23 a 24 °C",
+        "label": "23 a 24 °C",
+        "sym": {
+         "fill": "#ffffb2",
+         "fillOpacity": 0.55,
+         "width": 0
+        }
+       },
+       {
+        "value": "24 a 25 °C",
+        "label": "24 a 25 °C",
+        "sym": {
+         "fill": "#fed976",
+         "fillOpacity": 0.55,
+         "width": 0
+        }
+       },
+       {
+        "value": "25 a 26 °C",
+        "label": "25 a 26 °C",
+        "sym": {
+         "fill": "#feb24c",
+         "fillOpacity": 0.55,
+         "width": 0
+        }
+       },
+       {
+        "value": "26 a 27 °C",
+        "label": "26 a 27 °C",
+        "sym": {
+         "fill": "#fd8d3c",
+         "fillOpacity": 0.55,
+         "width": 0
+        }
+       },
+       {
+        "value": "27 a 28 °C",
+        "label": "27 a 28 °C",
+        "sym": {
+         "fill": "#fc4e2a",
+         "fillOpacity": 0.55,
+         "width": 0
+        }
+       },
+       {
+        "value": "28 a 29 °C",
+        "label": "28 a 29 °C",
+        "sym": {
+         "fill": "#e31a1c",
+         "fillOpacity": 0.55,
+         "width": 0
+        }
+       },
+       {
+        "value": "29 a 30 °C",
+        "label": "29 a 30 °C",
+        "sym": {
+         "fill": "#bd0026",
+         "fillOpacity": 0.55,
+         "width": 0
+        }
+       },
+       {
+        "value": "30 a 31 °C",
+        "label": "30 a 31 °C",
+        "sym": {
+         "fill": "#800026",
+         "fillOpacity": 0.55,
+         "width": 0
+        }
+       },
+       {
+        "value": "31 a 32 °C",
+        "label": "31 a 32 °C",
+        "sym": {
+         "fill": "#5a0019",
+         "fillOpacity": 0.55,
+         "width": 0
+        }
+       }
+      ],
+      "other": null
+     },
+     "aliases": {
+      "faixa": "Faixa de temperatura máxima",
+      "t_min": "Mínimo da faixa (°C)",
+      "t_max": "Máximo da faixa (°C)"
      }
     }
    ]

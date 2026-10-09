@@ -61,6 +61,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .nav a:hover { color: var(--brand); }
 .nav a.active { color: var(--brand); border-bottom-color: var(--brand); }
 .nav-toggle { display: none; margin-left: auto; background: none; border: 0; padding: 8px; }
+.partner { display: flex; align-items: center; height: 36px; padding-left: 20px; border-left: 1px solid var(--line); flex: none; }
+.partner img { height: 30px; width: auto; display: block; }
 
 /* ---------- mapa ---------- */
 .stage { position: relative; flex: 1; min-height: 0; }
@@ -243,7 +245,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
 @media (max-width: 860px) {
   :root { --top: 56px; --panel-w: calc(100vw - 28px); }
   .topbar { padding: 0 12px; }
-  .nav-toggle { display: block; }
+  .nav-toggle { display: block; margin-left: 0; }
+  .partner { margin-left: auto; padding-left: 12px; height: 28px; }
+  .partner img { height: 20px; }
+  .brand img { width: 48px; height: auto; }
+  .brand-text strong { font-size: 16px; white-space: nowrap; }
   .nav {
     position: absolute; top: var(--top); left: 0; right: 0; height: auto; flex-direction: column; gap: 0;
     background: var(--card); border-bottom: 1px solid var(--line); box-shadow: var(--shadow); display: none;
