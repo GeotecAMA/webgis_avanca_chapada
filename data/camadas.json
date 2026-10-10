@@ -1,6 +1,6 @@
 {
  "title": "Plataforma Avança Chapada Bahia",
- "generated": "2026-10-10T11:52:05",
+ "generated": "2026-10-10T12:01:24",
  "boundary": "territorio-de-identidade-chapada-diamantina",
  "topics": [
   {
@@ -40,7 +40,8 @@
        "width": 1.1
       }
      },
-     "aliases": {}
+     "aliases": {},
+     "label": "MUNICIPIO"
     },
     {
      "id": "setores-censitarios-ibge-2022",

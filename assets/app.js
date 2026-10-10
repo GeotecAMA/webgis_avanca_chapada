@@ -110,7 +110,14 @@
         }
         return L.circleMarker(latlng, { pane, renderer: renderers[pane], ...pointStyle(s) });
       },
-      onEachFeature: (f, lyr) => lyr.bindPopup(() => popupHtml(def, f.properties), { maxWidth: 360 }),
+      onEachFeature: (f, lyr) => {
+        lyr.bindPopup(() => popupHtml(def, f.properties), { maxWidth: 360 });
+        // rótulo ligado no QGIS: o nome fica escrito no mapa enquanto a camada estiver ativa
+        const nome = def.label && f.properties ? f.properties[def.label] : null;
+        if (nome !== null && nome !== undefined && nome !== "") {
+          lyr.bindTooltip(String(nome), { permanent: true, direction: def.geom === "point" ? "right" : "center", className: "map-label", interactive: false, opacity: 1 });
+        }
+      },
     });
   }
 
