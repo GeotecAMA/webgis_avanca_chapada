@@ -23,7 +23,7 @@
   // camadas por tipo em panes separados: polígonos < linhas < pontos.
   // Só os polígonos (muitas feições) usam canvas; o resto é SVG, que deixa o
   // clique passar para o canvas de baixo (canvas por cima bloquearia os cliques).
-  const PANES = { mask: 350, polygon: 410, line: 420, outline: 430, point: 440 };
+  const PANES = { mask: 350, context: 360, polygon: 410, line: 420, outline: 430, point: 440 };
   const renderers = {};
   for (const [name, z] of Object.entries(PANES)) {
     map.createPane(name).style.zIndex = z;
@@ -185,6 +185,36 @@
     }).addTo(map);
     territoryBounds = outline.getBounds();
     fitView(territoryBounds);
+  }
+
+  // ------------------------------------------------------------------ contorno fixo (ex.: limite estadual)
+  // Sempre visível, sem clique e fora da lista: mostra até onde vão a plataforma e os seus dados.
+  async function drawContext(list) {
+    let limite = null;
+    const furos = [];
+    for (const def of list) {
+      const data = await loadData(def);
+      const cor = (def.sym && def.sym.stroke) || "#1f2a37";
+      // o GeoJSON pode trazer GeometryCollection (polígonos + sobras de linha): só os polígonos contam
+      const polysOf = g => !g ? [] : g.type === "Polygon" ? [g.coordinates] : g.type === "MultiPolygon" ? g.coordinates
+        : g.type === "GeometryCollection" ? (g.geometries || []).flatMap(polysOf) : [];
+      for (const f of data.features || []) for (const pol of polysOf(f.geometry)) furos.push(pol[0].map(([x, y]) => [y, x]));
+      const halo = L.geoJSON(data, { pane: "context", renderer: renderers.context, interactive: false, style: { color: "#ffffff", weight: 6, fill: false, opacity: .85 } }).addTo(map);
+      L.geoJSON(data, { pane: "context", renderer: renderers.context, interactive: false, style: { color: cor, weight: 2.5, fill: false, opacity: 1 } }).addTo(map);
+      limite = limite ? limite.extend(halo.getBounds()) : halo.getBounds();
+    }
+    if (furos.length) {   // fora do limite fixo: escurecido, para marcar onde a plataforma termina
+      L.polygon([[[-89, -179], [-89, 179], [89, 179], [89, -179]], ...furos], {
+        pane: "context", renderer: renderers.context, stroke: false, fillColor: "#1f2a37", fillOpacity: .28, interactive: false,
+      }).addTo(map);
+    }
+    if (limite && limite.isValid()) {
+      const area = limite.pad(0.2);
+      const ajusta = () => map.setMinZoom(Math.max(4, Math.floor(map.getBoundsZoom(area)) - 0.5));   // deixa ver o limite inteiro
+      map.setMaxBounds(area);                       // o mapa não sai da área da plataforma
+      map.options.maxBoundsViscosity = 0.9;
+      ajusta(); map.on("resize", ajusta);
+    }
   }
 
   // ------------------------------------------------------------------ painel de camadas
@@ -449,12 +479,13 @@
 
     const boundary = manifest.boundary && state.get(manifest.boundary);
     if (boundary) drawTerritory(boundary.def).catch(console.error);
+    if ((manifest.context || []).length) drawContext(manifest.context).catch(console.error);
 
     // A plataforma abre sempre sem camadas ligadas (só o contorno do território):
     // quem consulta escolhe o que quer ver. A visibilidade do QGIS não é aplicada.
 
     // ponte para o relatório em PDF (assets/relatorio.js)
-    window.AVANCA = { manifest, conteudo: C, esc, fmt, showStatus, hideStatus };
+    window.AVANCA = { manifest, conteudo: C, esc, fmt, showStatus, hideStatus, map };
     document.dispatchEvent(new Event("avanca:pronto"));
   }
   init();

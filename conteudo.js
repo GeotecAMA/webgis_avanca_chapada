@@ -108,6 +108,7 @@ window.CONTEUDO = {
     { termo: "Sistema FIEB (Federação das Indústrias do Estado da Bahia)", definicao: "Sistema que reúne a Federação das Indústrias do Estado da Bahia e as entidades a ela ligadas, entre elas SESI, SENAI e IEL. É um dos realizadores do projeto Avança Chapada." },
     { termo: "IEL (Instituto Euvaldo Lodi)", definicao: "Entidade do Sistema FIEB voltada à gestão empresarial, à inovação e ao desenvolvimento de carreiras, com programas de estágio e capacitação. É um dos realizadores do projeto Avança Chapada." },
     { termo: "SENAI CIMATEC", definicao: "Campus Integrado de Manufatura e Tecnologias do SENAI Bahia, com sede em Salvador, que atua em educação, pesquisa aplicada e inovação. É o executor do projeto Avança Chapada, por meio da área de Meio Ambiente." },
+    { termo: "Limite estadual da Bahia", definicao: "Contorno do estado da Bahia (IBGE, malha municipal 2023), desenhado de forma fixa no mapa. Marca até onde vão a plataforma e os seus dados: a área fora do estado aparece escurecida e o mapa não se desloca para além dela." },
   ],
 
   perguntas: [

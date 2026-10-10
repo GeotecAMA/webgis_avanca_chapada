@@ -1,6 +1,6 @@
 {
  "title": "Plataforma Avança Chapada Bahia",
- "generated": "2026-10-10T12:03:20",
+ "generated": "2026-10-10T12:18:27",
  "boundary": "territorio-de-identidade-chapada-diamantina",
  "topics": [
   {
@@ -1805,6 +1805,19 @@
    "maxZoom": 19,
    "attribution": "© Google",
    "visible": false
+  }
+ ],
+ "context": [
+  {
+   "id": "limite-estadual-bahia-ibge-2023",
+   "name": "Limite estadual – Bahia (IBGE 2023)",
+   "file": "data/limite-estadual-bahia-ibge-2023.geojson",
+   "geom": "polygon",
+   "sym": {
+    "stroke": "#1f2a37",
+    "strokeOpacity": 1.0,
+    "width": 2.6
+   }
   }
  ]
 }
