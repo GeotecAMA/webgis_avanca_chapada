@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@1,700;1,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-  <link rel="stylesheet" href="assets/style.css?v=20261010100930">
+  <link rel="stylesheet" href="assets/style.css?v=20261010101639">
 </head>
 <body>
   <header class="topbar">
@@ -58,6 +58,10 @@
         <h2>Camadas</h2>
         <div id="topics"><p class="muted">Carregando camadas…</p></div>
         <button class="clear-btn" id="clearAll" type="button">Desligar todas</button>
+        <button class="report-btn" id="btnReport" type="button">
+          <svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+          Relatório de vocação (PDF)
+        </button>
       </div>
       <div class="tab-body" id="tab-base" hidden>
         <h2>Mapa base</h2>
@@ -78,6 +82,9 @@
       <button id="tOut" title="Afastar" aria-label="Afastar">
         <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4M8 11h6"/></svg>
       </button>
+      <button id="tReport" title="Relatório de vocação em PDF" aria-label="Relatório de vocação em PDF">
+        <svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+      </button>
       <button id="tLocate" title="Minha localização" aria-label="Minha localização">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="7"/></svg>
       </button>
@@ -93,7 +100,8 @@
   <footer class="footer" id="footer"></footer>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-  <script src="conteudo.js?v=20261010100930"></script>
-  <script src="assets/app.js?v=20261010100930"></script>
+  <script src="conteudo.js?v=20261010101639"></script>
+  <script src="assets/app.js?v=20261010101639"></script>
+  <script src="assets/relatorio.js?v=20261010101639"></script>
 </body>
 </html>

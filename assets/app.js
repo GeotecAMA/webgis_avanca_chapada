@@ -443,12 +443,12 @@
     const boundary = manifest.boundary && state.get(manifest.boundary);
     if (boundary) drawTerritory(boundary.def).catch(console.error);
 
-    for (const topic of manifest.topics)
-      for (const def of topic.layers)
-        if (def.visible) {
-          setLayer(def.id, true);
-          document.querySelector(`.lyr-wrap[data-id="${def.id}"]`)?.closest(".topic").classList.add("open");
-        }
+    // A plataforma abre sempre sem camadas ligadas (só o contorno do território):
+    // quem consulta escolhe o que quer ver. A visibilidade do QGIS não é aplicada.
+
+    // ponte para o relatório em PDF (assets/relatorio.js)
+    window.AVANCA = { manifest, conteudo: C, esc, fmt, showStatus, hideStatus };
+    document.dispatchEvent(new Event("avanca:pronto"));
   }
   init();
 })();

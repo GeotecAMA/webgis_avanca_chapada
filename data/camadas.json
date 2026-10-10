@@ -1,6 +1,6 @@
 {
  "title": "Plataforma Avança Chapada Bahia",
- "generated": "2026-10-10T10:09:30",
+ "generated": "2026-10-10T10:16:39",
  "boundary": "territorio-de-identidade-chapada-diamantina",
  "topics": [
   {
@@ -59,6 +59,80 @@
       }
      },
      "aliases": {}
+    }
+   ]
+  },
+  {
+   "name": "Arranjos Produtivos Locais",
+   "layers": [
+    {
+     "id": "arranjos-produtivos-e-potencial-de-biogas",
+     "name": "Arranjos produtivos e potencial de biogás",
+     "sub": null,
+     "file": "data/arranjos-produtivos-e-potencial-de-biogas.geojson",
+     "geom": "polygon",
+     "visible": false,
+     "count": 24,
+     "style": {
+      "type": "categorized",
+      "field": "status",
+      "classes": [
+       {
+        "value": "Aguardando modelagem",
+        "label": "Aguardando modelagem",
+        "sym": {
+         "fill": "#b9c2cc",
+         "fillOpacity": 0.27,
+         "stroke": "#6b7785",
+         "strokeOpacity": 1.0,
+         "width": 1.1,
+         "dash": "6 4"
+        }
+       },
+       {
+        "value": "Preliminar",
+        "label": "Dado preliminar",
+        "sym": {
+         "fill": "#f6c431",
+         "fillOpacity": 0.55,
+         "stroke": "#8a6d00",
+         "strokeOpacity": 1.0,
+         "width": 1.1
+        }
+       },
+       {
+        "value": "Modelado",
+        "label": "Dado modelado",
+        "sym": {
+         "fill": "#2d7a31",
+         "fillOpacity": 0.59,
+         "stroke": "#1d5e27",
+         "strokeOpacity": 1.0,
+         "width": 1.1
+        }
+       }
+      ],
+      "other": null
+     },
+     "aliases": {
+      "MUNICIPIO": "Município",
+      "Codigo": "Código IBGE",
+      "status": "Situação do dado",
+      "apl_principal": "Arranjo produtivo principal",
+      "apl_secundario": "Arranjo produtivo secundário",
+      "residuo_principal": "Principal resíduo para biogás",
+      "residuos_t_ano": "Resíduos totais (t/ano)",
+      "biogas_agricola": "Biogás – resíduos agrícolas (Nm³/ano)",
+      "biogas_pecuaria": "Biogás – pecuária (Nm³/ano)",
+      "biogas_rsu": "Biogás – RSU/FORSU (Nm³/ano)",
+      "biogas_esgoto": "Biogás – esgoto (Nm³/ano)",
+      "biogas_agroindustria": "Biogás – agroindústria (Nm³/ano)",
+      "energia_mwh_ano": "Energia elétrica equivalente (MWh/ano)",
+      "biometano_nm3_ano": "Biometano equivalente (Nm³/ano)",
+      "fonte": "Fonte / método",
+      "observacao": "Observação",
+      "biogas_total": "Biogás – total (Nm³/ano)"
+     }
     }
    ]
   },
@@ -172,7 +246,7 @@
      "sub": "Transmissão (ONS)",
      "file": "data/subestacoes-ons-sin.geojson",
      "geom": "point",
-     "visible": true,
+     "visible": false,
      "count": 10,
      "style": {
       "type": "categorized",
@@ -218,7 +292,7 @@
      "sub": "Transmissão (ONS)",
      "file": "data/linhas-de-transmissao-ons-sin.geojson",
      "geom": "line",
-     "visible": true,
+     "visible": false,
      "count": 21,
      "style": {
       "type": "categorized",
