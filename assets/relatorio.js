@@ -81,7 +81,7 @@
   const pl = (n, um, varios) => `${N(n)} ${n === 1 ? um : varios}`;
   // nomes em caixa alta (unidades de conservação, aeródromos) viram texto corrido; siglas e códigos ficam como estão
   const titulo_ = s => {
-    s = String(s);
+    s = String(s).replace(/[•-]/g, "").replace(/\s(D[aeo]s?|E)\s/g, m => m.toLowerCase());
     if (s !== s.toUpperCase() || /\d/.test(s) || s.split(/\s+/).some(w => w.length <= 3 && !/^(DE|DA|DO|DAS|DOS|E|RIO)$/.test(w))) return s;
     return s.toLowerCase().replace(/(^|[\s\-/(])([a-zà-ú])/g, (m, x, y) => x + y.toUpperCase()).replace(/\s(D[aeo]s?|E)\s/g, m => m.toLowerCase());
   };
@@ -139,7 +139,8 @@
   const tema = topico => TEMAS.find(t => t.re.test(topico)) || TEMA_PADRAO;
   const itensTop = (a, n) => Object.entries(a.itens || {}).sort((x, y) => y[1] - x[1]).slice(0, n);
   const classesTop = (a, n) => Object.entries(a.classes || {}).sort((x, y) => y[1] - x[1]).slice(0, n);
-  const proxTxt = p => `${p.nome ? titulo_(p.nome) + ", " : ""}a ${N(p.km, 1)} km${p.classe ? ` (${String(p.classe).toLowerCase()})` : ""}`;
+  const proxTxt = p => `${p.nome ? titulo_(p.nome) + ", " : ""}a ${N(p.km, 1)} km${p.classe ? ` – ${p.classe}` : ""}`;
+  const semFonte = nome => nome.replace(/\s*\([^)]*\)\s*$/, "");   // "Centrais solares (ANEEL)" -> "Centrais solares"
 
   // ------------------------------------------------------------------ blocos à parte: arranjos produtivos, IVS, conjuntos elétricos
   function aplResumo(P, cods) {
@@ -226,7 +227,7 @@
       for (const c of P.camadas.filter(x => x.topic === topico)) {
         const s = sel.camadas[c.id];
         if (!s || !(s.v > 0)) {
-          nao.push(c.name + (s && s.prox ? ` (mais próximo: ${proxTxt(s.prox)})` : ""));
+          nao.push(c.name + (s && s.prox ? ` — mais próximo: ${proxTxt(s.prox)}` : ""));
           continue;
         }
         let t = `${c.name}: ${valor(c.geom, s.v)}`;
@@ -380,9 +381,9 @@
     if (G.tEn) {
       const desc = x => {
         const mw = x.s.somas.pot_mw && x.s.somas.pot_mw._total, cl = classesTop(x.s, 3);
-        return `${x.def.name}: ${valor(x.def.geom, x.s.v)}` + (cl.length ? ` (${cl.map(([k, v]) => `${k.toLowerCase()}: ${valor(x.def.geom, v)}`).join("; ")})` : "") + (mw > 0 ? `, ${N(mw, 1)} MW outorgados` : "");
+        return `${x.def.name}: ${valor(x.def.geom, x.s.v)}` + (cl.length ? ` (${cl.map(([k, v]) => `${k}: ${valor(x.def.geom, v)}`).join("; ")})` : "") + (mw > 0 ? `, ${N(mw, 1)} MW outorgados` : "");
       };
-      const totEn = G.en.slice(0, 3).map(x => { const t = tudo.camadas[x.def.id] || { v: 0, classes: {} }; const op = Object.entries(t.classes).filter(([k]) => /em opera/i.test(k)).reduce((a, [, v]) => a + v, 0); return `${x.def.name.replace(/\s*\(.*\)$/, "").toLowerCase()}: ${N(t.v)} (${N(op)} em operação)`; });
+      const totEn = G.en.slice(0, 3).map(x => { const t = tudo.camadas[x.def.id] || { v: 0, classes: {} }; const op = Object.entries(t.classes).filter(([k]) => /em opera/i.test(k)).reduce((a, [, v]) => a + v, 0); return `${semFonte(x.def.name)}: ${N(t.v)} (${N(op)} em operação)`; });
       const semi = G.semi && G.semi.s.v > 0 ? ` ${N(Math.min(100, pct(G.semi.s.v, sel.area)))}% do recorte no Semiárido.` : "";
       ops.push({
         id: "ENERGIA_RENOVAVEL", cat: "externo", catTxt: "Investimento externo",
@@ -392,7 +393,7 @@
           : G.dentro.length ? "Há apenas infraestrutura planejada ou de transmissão no recorte. Necessário: recurso solar e eólico, rede de distribuição e situação das obras planejadas."
             : "Só há indício de proximidade. Necessário: recurso solar e eólico, rede de distribuição e situação das obras planejadas.",
         evidencia: (G.dentro.length ? G.dentro.map(desc).join(". ") + "." : "Nenhuma usina, subestação ou linha de transmissão no recorte.") +
-          (G.perto.length ? ` No entorno, dentro do território: ${G.perto.map(x => `${x.def.name.replace(/\s*\(.*\)$/, "").toLowerCase()} — ${proxTxt(x.s.prox)}`).join("; ")}.` : "") + semi,
+          (G.perto.length ? ` No entorno, dentro do território: ${G.perto.map(x => `${semFonte(x.def.name)}: ${proxTxt(x.s.prox)}`).join("; ")}.` : "") + semi,
         area: `A definir em ${onde}` + (ucPct >= 0.5 ? `, fora das unidades de conservação (${N(ucPct, 1)}% do recorte)` : ""),
         atores: `Empreendedores de geração e transmissoras (externos). ${prefeitura} e proprietários rurais.`,
         condicoes: "Capacidade de conexão à rede; licenciamento ambiental." + ctxConj,
@@ -625,12 +626,13 @@
         const S = extras.social;
         quebra(26);
         tabela({ head: [[`Vulnerabilidade social · IVS ${S.ano} (Ipea)`, "IVS", "Faixa", "Infraestrutura urbana", "Capital humano", "Renda e trabalho", `Posição entre ${S.total}`]],
-          body: S.linhas.map(l => [l.nome, N3(l.ivs), titulo_(S.faixa(l.faixa)), N3(l.ivs_infra), N3(l.ivs_cap_h), N3(l.ivs_renda), `${l.pos}º`]),
+          body: S.linhas.map(l => [l.nome, N3(l.ivs), S.faixa(l.faixa).replace(/^./, c => c.toUpperCase()), N3(l.ivs_infra), N3(l.ivs_cap_h), N3(l.ivs_renda), `${l.pos}º`]),
           styles: { ...estilo, fontSize: 8 }, columnStyles: { 1: { halign: "right", fontStyle: "bold" }, 3: { halign: "right" }, 4: { halign: "right" }, 5: { halign: "right" }, 6: { halign: "right" } } });
         par("Índice de 0 a 1: quanto maior, maior a vulnerabilidade. Faixas do Ipea: muito baixa (até 0,200), baixa (até 0,300), média (até 0,400), alta (até 0,500) e muito alta (acima de 0,500). A posição 1 é a do menor índice. Valores do Censo 2010, anteriores às mudanças da última década.", { size: 8, cor: CINZA });
       }
 
       // 4. oportunidades
+      quebra(70);
       secao("4. Oportunidades para o território");
       const nL = O.ops.filter(o => o.cat === "local").length, nE = O.ops.length - nL, nConf = O.ops.filter(o => o.nivel === "Confirmado").length;
       if (!O.ops.length) par("Nenhuma regra de oportunidade foi acionada pelos dados do recorte.");
