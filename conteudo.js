@@ -104,6 +104,10 @@ window.CONTEUDO = {
     { termo: "Limite de DEC e FEC", definicao: "Valor máximo anual de DEC e de FEC que a ANEEL estabelece para cada conjunto elétrico. Acima dele, a distribuidora descumpre o padrão de continuidade do fornecimento." },
     { termo: "BDGD (Base de Dados Geográfica da Distribuidora)", definicao: "Base que cada distribuidora de energia envia anualmente à ANEEL com a representação geográfica da sua rede e dos seus conjuntos elétricos. A plataforma usa os conjuntos da Neoenergia Coelba com data-base de 31/12/2025." },
     { termo: "Nova Indústria Brasil (NIB)", definicao: "Política industrial do Governo Federal organizada em missões, como cadeias agroindustriais (Missão 1), infraestrutura, saneamento, moradia e mobilidade (Missão 3) e bioeconomia, descarbonização e transição energética (Missão 5). No relatório de vocação, é citada como exemplo de política pública com aderência temática a uma oportunidade, sem representar garantia de apoio." },
+    { termo: "ABDI (Agência Brasileira de Desenvolvimento Industrial)", definicao: "Entidade vinculada ao Ministério do Desenvolvimento, Indústria, Comércio e Serviços que apoia a execução da política industrial brasileira. É uma das realizadoras do projeto Avança Chapada." },
+    { termo: "Sistema FIEB (Federação das Indústrias do Estado da Bahia)", definicao: "Sistema que reúne a Federação das Indústrias do Estado da Bahia e as entidades a ela ligadas, entre elas SESI, SENAI e IEL. É um dos realizadores do projeto Avança Chapada." },
+    { termo: "IEL (Instituto Euvaldo Lodi)", definicao: "Entidade do Sistema FIEB voltada à gestão empresarial, à inovação e ao desenvolvimento de carreiras, com programas de estágio e capacitação. É um dos realizadores do projeto Avança Chapada." },
+    { termo: "SENAI CIMATEC", definicao: "Campus Integrado de Manufatura e Tecnologias do SENAI Bahia, com sede em Salvador, que atua em educação, pesquisa aplicada e inovação. É o executor do projeto Avança Chapada, por meio da área de Meio Ambiente." },
   ],
 
   perguntas: [
