@@ -1,6 +1,6 @@
 {
  "title": "Plataforma Avança Chapada Bahia",
- "generated": "2026-10-10T09:53:36",
+ "generated": "2026-10-10T10:05:32",
  "boundary": "territorio-de-identidade-chapada-diamantina",
  "topics": [
   {
@@ -169,7 +169,7 @@
     {
      "id": "subestacoes-ons-sin",
      "name": "Subestações (ONS/SIN)",
-     "sub": null,
+     "sub": "Transmissão (ONS)",
      "file": "data/subestacoes-ons-sin.geojson",
      "geom": "point",
      "visible": true,
@@ -215,7 +215,7 @@
     {
      "id": "linhas-de-transmissao-ons-sin",
      "name": "Linhas de transmissão (ONS/SIN)",
-     "sub": null,
+     "sub": "Transmissão (ONS)",
      "file": "data/linhas-de-transmissao-ons-sin.geojson",
      "geom": "line",
      "visible": true,
@@ -275,6 +275,301 @@
       "dt_entrada": "Entrada em operação",
       "dt_previst": "Data prevista",
       "outorga": "Número da outorga",
+      "ext_ti_km": "Extensão no território (km)"
+     }
+    },
+    {
+     "id": "centrais-eolicas-aneel",
+     "name": "Centrais eólicas (ANEEL)",
+     "sub": "Geração (ANEEL)",
+     "file": "data/centrais-eolicas-aneel.geojson",
+     "geom": "point",
+     "visible": false,
+     "count": 68,
+     "style": {
+      "type": "categorized",
+      "field": "situacao",
+      "classes": [
+       {
+        "value": "Em operação",
+        "label": "Em operação",
+        "sym": {
+         "size": 21,
+         "radius": 10.5,
+         "stroke": "#ffffff",
+         "width": 1,
+         "icon": "data/icons/aneel-eolica-operacao.svg"
+        }
+       },
+       {
+        "value": "Planejada",
+        "label": "Planejada (outorga ou DRO)",
+        "sym": {
+         "size": 21,
+         "radius": 10.5,
+         "stroke": "#ffffff",
+         "width": 1,
+         "icon": "data/icons/aneel-eolica-planejada.svg"
+        }
+       }
+      ],
+      "other": null
+     },
+     "aliases": {
+      "nome": "Nome",
+      "situacao": "Situação",
+      "fase": "Fase (ANEEL)",
+      "pot_mw": "Potência outorgada (MW)",
+      "n_aerog": "Nº de aerogeradores",
+      "municipio": "Município",
+      "proprietar": "Proprietário",
+      "ini_oper": "Início de operação",
+      "ceg": "Código CEG",
+      "ato_legal": "Ato legal"
+     }
+    },
+    {
+     "id": "centrais-solares-aneel",
+     "name": "Centrais solares (ANEEL)",
+     "sub": "Geração (ANEEL)",
+     "file": "data/centrais-solares-aneel.geojson",
+     "geom": "point",
+     "visible": false,
+     "count": 68,
+     "style": {
+      "type": "categorized",
+      "field": "situacao",
+      "classes": [
+       {
+        "value": "Em operação",
+        "label": "Em operação",
+        "sym": {
+         "size": 21,
+         "radius": 10.5,
+         "stroke": "#ffffff",
+         "width": 1,
+         "icon": "data/icons/aneel-solar-operacao.svg"
+        }
+       },
+       {
+        "value": "Planejada",
+        "label": "Planejada (outorga ou DRO)",
+        "sym": {
+         "size": 21,
+         "radius": 10.5,
+         "stroke": "#ffffff",
+         "width": 1,
+         "icon": "data/icons/aneel-solar-planejada.svg"
+        }
+       }
+      ],
+      "other": null
+     },
+     "aliases": {
+      "nome": "Nome",
+      "situacao": "Situação",
+      "fase": "Fase (ANEEL)",
+      "pot_mw": "Potência outorgada (MW)",
+      "municipio": "Município",
+      "proprietar": "Proprietário",
+      "ini_oper": "Início de operação",
+      "ceg": "Código CEG",
+      "ato_legal": "Ato legal"
+     }
+    },
+    {
+     "id": "hidreletricas-cgh-e-pch-aneel",
+     "name": "Hidrelétricas CGH e PCH (ANEEL)",
+     "sub": "Geração (ANEEL)",
+     "file": "data/hidreletricas-cgh-e-pch-aneel.geojson",
+     "geom": "point",
+     "visible": false,
+     "count": 2,
+     "style": {
+      "type": "categorized",
+      "field": "situacao",
+      "classes": [
+       {
+        "value": "Em operação",
+        "label": "Em operação",
+        "sym": {
+         "size": 21,
+         "radius": 10.5,
+         "stroke": "#ffffff",
+         "width": 1,
+         "icon": "data/icons/aneel-hidro-operacao.svg"
+        }
+       },
+       {
+        "value": "Eixo inventariado",
+        "label": "Eixo inventariado (sem usina)",
+        "sym": {
+         "size": 21,
+         "radius": 10.5,
+         "stroke": "#ffffff",
+         "width": 1,
+         "icon": "data/icons/aneel-hidro-planejada.svg"
+        }
+       }
+      ],
+      "other": null
+     },
+     "aliases": {
+      "nome": "Nome",
+      "tipo": "Tipo",
+      "situacao": "Situação",
+      "fase": "Fase (ANEEL)",
+      "pot_mw": "Potência outorgada (MW)",
+      "rio": "Rio",
+      "municipio": "Município",
+      "proprietar": "Proprietário",
+      "ato_legal": "Ato legal"
+     }
+    },
+    {
+     "id": "aerogeradores-aneel",
+     "name": "Aerogeradores (ANEEL)",
+     "sub": "Geração (ANEEL)",
+     "file": "data/aerogeradores-aneel.geojson",
+     "geom": "point",
+     "visible": false,
+     "count": 688,
+     "style": {
+      "type": "categorized",
+      "field": "situacao",
+      "classes": [
+       {
+        "value": "Em operação",
+        "label": "Em operação",
+        "sym": {
+         "fill": "#fbf3b0",
+         "fillOpacity": 1.0,
+         "stroke": "#111111",
+         "width": 1.1,
+         "radius": 5
+        }
+       },
+       {
+        "value": "Não operando",
+        "label": "Não operando (em implantação ou sem registro)",
+        "sym": {
+         "fill": "#ffffff",
+         "fillOpacity": 1.0,
+         "stroke": "#8a8a8a",
+         "width": 1.1,
+         "radius": 5
+        }
+       }
+      ],
+      "other": null
+     },
+     "aliases": {
+      "parque": "Parque eólico",
+      "id_aerog": "Identificação",
+      "situacao": "Situação",
+      "pot_mw": "Potência outorgada (MW)",
+      "alt_torre": "Altura da torre (m)",
+      "diam_rotor": "Diâmetro do rotor (m)",
+      "proprietar": "Proprietário",
+      "ceg": "Código CEG"
+     }
+    },
+    {
+     "id": "parques-eolicos-area-aneel",
+     "name": "Parques eólicos – área (ANEEL)",
+     "sub": "Geração (ANEEL)",
+     "file": "data/parques-eolicos-area-aneel.geojson",
+     "geom": "polygon",
+     "visible": false,
+     "count": 76,
+     "style": {
+      "type": "categorized",
+      "field": "situacao",
+      "classes": [
+       {
+        "value": "Em operação",
+        "label": "Em operação",
+        "sym": {
+         "fill": "#e60000",
+         "fillOpacity": 0.15,
+         "stroke": "#e60000",
+         "strokeOpacity": 1.0,
+         "width": 1.3
+        }
+       },
+       {
+        "value": "Em construção",
+        "label": "Em construção",
+        "sym": {
+         "fill": "#e60000",
+         "fillOpacity": 0.07,
+         "stroke": "#e60000",
+         "strokeOpacity": 1.0,
+         "width": 1.3,
+         "dash": "6 4"
+        }
+       },
+       {
+        "value": "Planejada",
+        "label": "Planejada (outorga ou DRO)",
+        "sym": {
+         "stroke": "#e60000",
+         "strokeOpacity": 1.0,
+         "width": 1.3,
+         "dash": "2 4"
+        }
+       }
+      ],
+      "other": null
+     },
+     "aliases": {
+      "nome": "Nome",
+      "situacao": "Situação",
+      "fase": "Fase (ANEEL)",
+      "pot_mw": "Potência outorgada (MW)",
+      "area_ha": "Área (ha)"
+     }
+    },
+    {
+     "id": "linhas-de-conexao-das-eolicas-aneel",
+     "name": "Linhas de conexão das eólicas (ANEEL)",
+     "sub": "Geração (ANEEL)",
+     "file": "data/linhas-de-conexao-das-eolicas-aneel.geojson",
+     "geom": "line",
+     "visible": false,
+     "count": 26,
+     "style": {
+      "type": "categorized",
+      "field": "situacao",
+      "classes": [
+       {
+        "value": "Em operação",
+        "label": "Em operação",
+        "sym": {
+         "stroke": "#7e8a00",
+         "strokeOpacity": 1.0,
+         "width": 1.9
+        }
+       },
+       {
+        "value": "Planejada",
+        "label": "Planejada",
+        "sym": {
+         "stroke": "#7e8a00",
+         "strokeOpacity": 1.0,
+         "width": 1.9,
+         "dash": "6 4"
+        }
+       }
+      ],
+      "other": null
+     },
+     "aliases": {
+      "responsave": "Responsável",
+      "tensao_kv": "Tensão (kV)",
+      "situacao": "Situação",
+      "uso": "Uso",
+      "municipios": "Municípios atravessados",
       "ext_ti_km": "Extensão no território (km)"
      }
     }
@@ -989,8 +1284,8 @@
         "value": "Muito alto",
         "label": "Muito alto",
         "sym": {
-         "fill": "#070059",
-         "fillOpacity": 0.55,
+         "fill": "#e90700",
+         "fillOpacity": 0.35,
          "stroke": "#e90700",
          "strokeOpacity": 1.0,
          "width": 2.3
@@ -1000,20 +1295,9 @@
         "value": "Alto",
         "label": "Alto",
         "sym": {
-         "fill": "#900759",
-         "fillOpacity": 0.55,
+         "fill": "#df9007",
+         "fillOpacity": 0.35,
          "stroke": "#df9007",
-         "strokeOpacity": 1.0,
-         "width": 2.3
-        }
-       },
-       {
-        "value": "Médio",
-        "label": "Médio",
-        "sym": {
-         "fill": "#ff0759",
-         "fillOpacity": 0.55,
-         "stroke": "#dfff07",
          "strokeOpacity": 1.0,
          "width": 2.3
         }
@@ -1048,8 +1332,8 @@
      "style": {
       "type": "single",
       "sym": {
-       "fill": "#00ff26",
-       "fillOpacity": 0.0,
+       "fill": "#0000ff",
+       "fillOpacity": 0.15,
        "stroke": "#0000cd",
        "strokeOpacity": 1.0,
        "width": 1.5
@@ -1071,8 +1355,8 @@
      "style": {
       "type": "single",
       "sym": {
-       "fill": "#b05099",
-       "fillOpacity": 0.55,
+       "fill": "#e8b050",
+       "fillOpacity": 0.43,
        "stroke": "#b07a1f",
        "strokeOpacity": 1.0,
        "width": 1.9

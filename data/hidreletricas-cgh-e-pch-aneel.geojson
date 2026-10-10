@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"xy_coordinate_resolution": 1e-06,
+"features": [
+{"type":"Feature","properties":{"nome":"Fazenda Magna Mater","tipo":"CGH","situacao":"Em operação","fase":"Operação","pot_mw":0.007,"rio":"Rio Gritador","municipio":"Piatã","proprietar":"Roberto Solano de Freitas","ato_legal":"DSP 87/2000"},"geometry":{"type":"Point","coordinates":[-41.850734,-13.097025]}},
+{"type":"Feature","properties":{"nome":"Santo Antônio da Licurioba","tipo":"PCH","situacao":"Eixo inventariado","fase":"Eixo Disponível","pot_mw":11.5,"rio":"Rio Santo Antônio","municipio":"Lençóis","proprietar":null,"ato_legal":"DSP 3872/2021, DSP 3660/2020, DSP 3081/2017, DSP 926/2015, DSP 1106/2008, DSP 3032/3007, DSP 1388/2007"},"geometry":{"type":"Point","coordinates":[-41.408972,-12.426806]}}
+]
+}

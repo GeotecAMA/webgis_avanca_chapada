@@ -70,11 +70,22 @@ window.CONTEUDO = {
     { termo: "Curso d'água", definicao: "Rio, riacho ou córrego. Na plataforma vem da Base Cartográfica 1:250.000 do IBGE (2025), com nome e regime (permanente ou temporário) de cada trecho." },
     { termo: "SIN (Sistema Interligado Nacional)", definicao: "Sistema de produção e transmissão de energia elétrica que interliga quase todo o Brasil, permitindo transferir energia entre regiões. É coordenado pelo ONS." },
     { termo: "ONS (Operador Nacional do Sistema Elétrico)", definicao: "Entidade responsável por coordenar e controlar a operação da geração e da transmissão de energia no SIN. A base SINDAT/SINMaps do ONS é a fonte da rede de energia da plataforma." },
-    { termo: "Linha de transmissão", definicao: "Linha de alta tensão que transporta energia das usinas às subestações e aos centros de consumo. Na plataforma, o traçado é esquemático (trechos retos entre subestações) e a cor indica a tensão: 500 kV em vermelho e 230 kV em verde; tracejada quando planejada." },
+    { termo: "Linha de transmissão", definicao: "Linha de alta tensão que transporta energia das usinas às subestações e aos centros de consumo. Nas linhas do ONS, o traçado é esquemático (trechos retos entre subestações) e a cor indica a tensão: 500 kV em vermelho e 230 kV em verde; tracejada quando planejada." },
     { termo: "Subestação", definicao: "Instalação que eleva ou rebaixa a tensão e conecta linhas, usinas e redes de distribuição. As subestações coletoras reúnem a energia de parques eólicos e solares para injetá-la no SIN." },
     { termo: "Tensão (kV)", definicao: "Diferença de potencial elétrico de uma linha, em quilovolts. Quanto maior a tensão, maior a capacidade de transportar energia a longas distâncias." },
     { termo: "Rede Básica", definicao: "Conjunto das instalações de transmissão do SIN com tensão igual ou superior a 230 kV." },
-    { termo: "Instalação planejada", definicao: "Linha ou subestação ainda sem data de entrada em operação na base do ONS; aparece tracejada (linhas) ou com círculo branco (subestações)." }
+    { termo: "Instalação planejada", definicao: "Linha ou subestação ainda sem data de entrada em operação na base do ONS; aparece tracejada (linhas) ou com círculo branco (subestações)." },
+    { termo: "ANEEL (Agência Nacional de Energia Elétrica)", definicao: "Agência que regula e fiscaliza a geração, a transmissão e a distribuição de energia no Brasil. O sistema SIGEL/SIGA da ANEEL é a fonte das usinas, aerogeradores e parques eólicos da plataforma." },
+    { termo: "Central geradora eólica (EOL)", definicao: "Usina que gera energia a partir do vento, formada por um conjunto de aerogeradores. Na plataforma, cada ponto é uma central outorgada pela ANEEL, com potência e fase." },
+    { termo: "Aerogerador", definicao: "Turbina eólica: torre com rotor de pás que converte a força do vento em energia elétrica. A plataforma mostra a posição de cada um, com altura da torre e diâmetro do rotor." },
+    { termo: "Parque eólico", definicao: "Área ocupada por uma central eólica, delimitada no projeto apresentado à ANEEL. Um complexo eólico reúne vários parques vizinhos." },
+    { termo: "Central geradora solar fotovoltaica (UFV)", definicao: "Usina que converte a luz do sol diretamente em eletricidade por meio de painéis fotovoltaicos." },
+    { termo: "CGH e PCH", definicao: "Centrais hidrelétricas de pequeno porte: a Central Geradora Hidrelétrica (CGH) tem até 5 MW e a Pequena Central Hidrelétrica (PCH), de 5 a 30 MW." },
+    { termo: "Potência outorgada (MW)", definicao: "Potência máxima que a usina está autorizada a instalar, em megawatts, conforme o ato de outorga da ANEEL." },
+    { termo: "Outorga", definicao: "Ato da ANEEL que autoriza a implantação e a exploração de uma usina. Outorgas revogadas não aparecem na plataforma." },
+    { termo: "DRO (Despacho de Requerimento de Outorga)", definicao: "Registro, pela ANEEL, do pedido de outorga de uma usina. Indica intenção de construir, não garantia: muitas usinas com DRO nunca saem do papel. Na plataforma aparecem como planejadas." },
+    { termo: "Eixo inventariado", definicao: "Local de um rio identificado em estudo de inventário como aproveitável para geração hidrelétrica, ainda sem usina." },
+    { termo: "Linha de conexão", definicao: "Linha que liga uma usina ou parque eólico à subestação do sistema de transmissão. As da plataforma vêm dos projetos básicos enviados à ANEEL e têm o traçado real." }
   ],
 
   perguntas: [
