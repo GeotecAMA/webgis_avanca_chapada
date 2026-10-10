@@ -85,7 +85,14 @@ window.CONTEUDO = {
     { termo: "Outorga", definicao: "Ato da ANEEL que autoriza a implantação e a exploração de uma usina. Outorgas revogadas não aparecem na plataforma." },
     { termo: "DRO (Despacho de Requerimento de Outorga)", definicao: "Registro, pela ANEEL, do pedido de outorga de uma usina. Indica intenção de construir, não garantia: muitas usinas com DRO nunca saem do papel. Na plataforma aparecem como planejadas." },
     { termo: "Eixo inventariado", definicao: "Local de um rio identificado em estudo de inventário como aproveitável para geração hidrelétrica, ainda sem usina." },
-    { termo: "Linha de conexão", definicao: "Linha que liga uma usina ou parque eólico à subestação do sistema de transmissão. As da plataforma vêm dos projetos básicos enviados à ANEEL e têm o traçado real." }
+    { termo: "Linha de conexão", definicao: "Linha que liga uma usina ou parque eólico à subestação do sistema de transmissão. As da plataforma vêm dos projetos básicos enviados à ANEEL e têm o traçado real." },
+    { termo: "Arranjo Produtivo Local (APL)", definicao: "Conjunto de produtores, empresas e instituições de um mesmo território que atuam em uma cadeia produtiva e mantêm vínculos de cooperação. Na plataforma, indica a vocação produtiva de cada município." },
+    { termo: "Vocação do município", definicao: "Conjunto de características que orientam o potencial de desenvolvimento de um município: atividades produtivas, recursos naturais, infraestrutura e restrições. O relatório em PDF da plataforma resume esse retrato a partir das camadas disponíveis." },
+    { termo: "Biogás", definicao: "Gás combustível, rico em metano, produzido pela decomposição de matéria orgânica na ausência de oxigênio (resíduos agrícolas, dejetos animais, fração orgânica do lixo, esgoto)." },
+    { termo: "Biometano", definicao: "Biogás purificado, com teor de metano semelhante ao do gás natural, que pode ser usado como combustível veicular ou injetado em gasodutos." },
+    { termo: "FORSU", definicao: "Fração Orgânica dos Resíduos Sólidos Urbanos: restos de alimentos e outros materiais orgânicos do lixo domiciliar, aproveitáveis para a produção de biogás." },
+    { termo: "Nm³ (normal metro cúbico)", definicao: "Volume de gás medido em condições padrão de temperatura e pressão. É a unidade usada para expressar o potencial de biogás e de biometano." },
+    { termo: "Relatório de vocação", definicao: "Documento em PDF gerado pela plataforma para um município ou conjunto de municípios, com a síntese da vocação e os indicadores de cada tema (energia, logística, água, ambiente, resíduos, clima e arranjos produtivos)." }
   ],
 
   perguntas: [
