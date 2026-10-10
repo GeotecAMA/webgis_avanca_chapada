@@ -1,6 +1,6 @@
 {
  "title": "Plataforma Avança Chapada Bahia",
- "generated": "2026-10-08T23:06:39",
+ "generated": "2026-10-10T09:30:42",
  "boundary": "territorio-de-identidade-chapada-diamantina",
  "topics": [
   {
@@ -12,7 +12,7 @@
      "sub": null,
      "file": "data/territorio-de-identidade-chapada-diamantina.geojson",
      "geom": "polygon",
-     "visible": false,
+     "visible": true,
      "count": 1,
      "style": {
       "type": "single",
@@ -30,7 +30,7 @@
      "sub": null,
      "file": "data/municipios-ibge-2023.geojson",
      "geom": "polygon",
-     "visible": true,
+     "visible": false,
      "count": 24,
      "style": {
       "type": "single",
@@ -71,7 +71,7 @@
      "sub": null,
      "file": "data/rodovias-federais-seinfra.geojson",
      "geom": "line",
-     "visible": true,
+     "visible": false,
      "count": 43,
      "style": {
       "type": "categorized",
@@ -352,7 +352,7 @@
      "sub": "Lixões",
      "file": "data/lixoes-vazadouros-a-ceu-aberto.geojson",
      "geom": "point",
-     "visible": true,
+     "visible": false,
      "count": 34,
      "style": {
       "type": "single",
@@ -385,7 +385,7 @@
      "sub": null,
      "file": "data/unidades-de-conservacao.geojson",
      "geom": "polygon",
-     "visible": true,
+     "visible": false,
      "count": 34,
      "style": {
       "type": "categorized",
@@ -1149,7 +1149,7 @@
    "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
    "maxZoom": 19,
    "attribution": "© colaboradores do OpenStreetMap",
-   "visible": false
+   "visible": true
   },
   {
    "name": "Google Satélite",
