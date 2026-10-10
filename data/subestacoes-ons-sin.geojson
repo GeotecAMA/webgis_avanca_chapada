@@ -1,0 +1,16 @@
+{
+"type": "FeatureCollection",
+"xy_coordinate_resolution": 1e-06,
+"features": [
+{"type":"Feature","properties":{"nome":"SUB IBICOARA BA","situacao":"Operação","agente":"TRANSMISSORA ALIANÇA DE ENERGIA ELÉTRICA S A","dt_entrada":"04/03/2003","dt_previst":"31/03/2003","id_ons":"BAICA"},"geometry":{"type":"Point","coordinates":[-41.375556,-13.4425]}},
+{"type":"Feature","properties":{"nome":"SUB MORRO DO CHAPEU II BA","situacao":"Operação","agente":"AXIA ENERGIA NORDESTE S.A.","dt_entrada":"01/08/2017","dt_previst":"31/08/2017","id_ons":"BAMPD"},"geometry":{"type":"Point","coordinates":[-41.350884,-11.723876]}},
+{"type":"Feature","properties":{"nome":"SUB SERRA DA BABILONIA BA","situacao":"Operação","agente":"EÓLICA SERRA DA BABILÔNIA II S.A.","dt_entrada":"12/12/2018","dt_previst":"30/09/2018","id_ons":"BASDB"},"geometry":{"type":"Point","coordinates":[-41.328733,-11.104661]}},
+{"type":"Feature","properties":{"nome":"SUB BABILONIA SUL BA","situacao":"Operação","agente":"Casa dos Ventos Energias Renováveis SA","dt_entrada":"17/11/2022","dt_previst":"30/09/2023","id_ons":"BABBS"},"geometry":{"type":"Point","coordinates":[-41.290773,-11.119977]}},
+{"type":"Feature","properties":{"nome":"SUB JUSSIAPE BA","situacao":"Planejada","agente":"GRANDE SERTAO II TRANSMISSORA DE ENERGIA S/A","dt_entrada":null,"dt_previst":"30/12/2029","id_ons":"BAJUSS"},"geometry":{"type":"Point","coordinates":[-41.54,-13.56]}},
+{"type":"Feature","properties":{"nome":"SUB MORRO DO CHAPEU SUL BA","situacao":"Operação","agente":"Enel Green Power Morro do Chapéu I Eólica SA","dt_entrada":"29/06/2018","dt_previst":"30/12/2018","id_ons":"BAMCS"},"geometry":{"type":"Point","coordinates":[-41.315428,-11.592894]}},
+{"type":"Feature","properties":{"nome":"SUB AROEIRA BA","situacao":"Operação","agente":"ENEL GREEN POWER BRASIL PARTICIPAÇÕES LTDA","dt_entrada":"19/12/2023","dt_previst":"01/05/2023","id_ons":"BAARO"},"geometry":{"type":"Point","coordinates":[-41.476162,-10.791089]}},
+{"type":"Feature","properties":{"nome":"SUB VENTOS DA BAHIA III BA","situacao":"Operação","agente":"Parque Eólico Ventos da Bahia III","dt_entrada":"03/12/2021","dt_previst":"25/02/2021","id_ons":"BAVB3"},"geometry":{"type":"Point","coordinates":[-41.499969,-12.098415]}},
+{"type":"Feature","properties":{"nome":"SUB MORRO DO CHAPEU SUL II BA","situacao":"Operação","agente":"ENEL GREEN POWER VENTOS DE SANTA ESPERANÇA 8 S.A","dt_entrada":"13/11/2021","dt_previst":"30/04/2021","id_ons":"RNMS2"},"geometry":{"type":"Point","coordinates":[-41.334548,-11.611288]}},
+{"type":"Feature","properties":{"nome":"SUB NOVO HORIZONTE BA","situacao":"Operação","agente":"PAN AMERICAN ENERGY ENERGIAS RENOVÁVEIS LTDA","dt_entrada":"02/02/2024","dt_previst":"28/08/2023","id_ons":"BANHZ"},"geometry":{"type":"Point","coordinates":[-42.204003,-12.663946]}}
+]
+}

@@ -1,6 +1,6 @@
 {
  "title": "Plataforma Avança Chapada Bahia",
- "generated": "2026-10-10T09:36:10",
+ "generated": "2026-10-10T09:53:00",
  "boundary": "territorio-de-identidade-chapada-diamantina",
  "topics": [
   {
@@ -30,7 +30,7 @@
      "sub": null,
      "file": "data/municipios-ibge-2023.geojson",
      "geom": "polygon",
-     "visible": false,
+     "visible": true,
      "count": 24,
      "style": {
       "type": "single",
@@ -160,6 +160,123 @@
       }
      },
      "aliases": {}
+    }
+   ]
+  },
+  {
+   "name": "Rede de energia",
+   "layers": [
+    {
+     "id": "subestacoes-ons-sin",
+     "name": "Subestações (ONS/SIN)",
+     "sub": null,
+     "file": "data/subestacoes-ons-sin.geojson",
+     "geom": "point",
+     "visible": true,
+     "count": 10,
+     "style": {
+      "type": "categorized",
+      "field": "situacao",
+      "classes": [
+       {
+        "value": "Operação",
+        "label": "Operação",
+        "sym": {
+         "fill": "#000000",
+         "fillOpacity": 1.0,
+         "stroke": "#ffffff",
+         "width": 1.5,
+         "radius": 6.4
+        }
+       },
+       {
+        "value": "Planejada",
+        "label": "Planejada",
+        "sym": {
+         "fill": "#ffffff",
+         "fillOpacity": 1.0,
+         "stroke": "#000000",
+         "width": 1.9,
+         "radius": 6.4
+        }
+       }
+      ],
+      "other": null
+     },
+     "aliases": {
+      "nome": "Nome",
+      "situacao": "Situação",
+      "agente": "Agente principal",
+      "dt_entrada": "Entrada em operação",
+      "dt_previst": "Data prevista",
+      "id_ons": "Id da instalação (ONS)"
+     }
+    },
+    {
+     "id": "linhas-de-transmissao-ons-sin",
+     "name": "Linhas de transmissão (ONS/SIN)",
+     "sub": null,
+     "file": "data/linhas-de-transmissao-ons-sin.geojson",
+     "geom": "line",
+     "visible": true,
+     "count": 21,
+     "style": {
+      "type": "categorized",
+      "field": "classe",
+      "classes": [
+       {
+        "value": "Operação com 500 kV",
+        "label": "Operação com 500 kV",
+        "sym": {
+         "stroke": "#ea1f26",
+         "strokeOpacity": 1.0,
+         "width": 2.6
+        }
+       },
+       {
+        "value": "Operação com 230 kV",
+        "label": "Operação com 230 kV",
+        "sym": {
+         "stroke": "#11a958",
+         "strokeOpacity": 1.0,
+         "width": 2.6
+        }
+       },
+       {
+        "value": "Planejada com 500 kV",
+        "label": "Planejada com 500 kV",
+        "sym": {
+         "stroke": "#ea1f26",
+         "strokeOpacity": 1.0,
+         "width": 2.6,
+         "dash": "6 4"
+        }
+       },
+       {
+        "value": "Planejada com 230 kV",
+        "label": "Planejada com 230 kV",
+        "sym": {
+         "stroke": "#11a958",
+         "strokeOpacity": 1.0,
+         "width": 2.6,
+         "dash": "6 4"
+        }
+       }
+      ],
+      "other": null
+     },
+     "aliases": {
+      "nome": "Nome",
+      "tensao_kv": "Tensão (kV)",
+      "situacao": "Situação",
+      "classe": "Classe",
+      "agente": "Agente proprietário",
+      "rede": "Tipo de rede",
+      "dt_entrada": "Entrada em operação",
+      "dt_previst": "Data prevista",
+      "outorga": "Número da outorga",
+      "ext_ti_km": "Extensão no território (km)"
+     }
     }
    ]
   },

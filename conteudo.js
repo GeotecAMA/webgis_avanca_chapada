@@ -67,7 +67,14 @@ window.CONTEUDO = {
     { termo: "Terreno sujeito a inundação", definicao: "Área plana junto a rios e lagoas que fica periodicamente alagada, mapeada pela SEI-BA na escala 1:100.000." },
     { termo: "Lixão (vazadouro a céu aberto)", definicao: "Local de disposição de resíduos sobre o solo sem nenhum controle ambiental. A Política Nacional de Resíduos Sólidos (Lei nº 12.305/2010) proíbe essa forma de disposição." },
     { termo: "Resíduos sólidos urbanos", definicao: "Resíduos domiciliares e de limpeza urbana, como varrição e limpeza de ruas, sob responsabilidade do município." },
-    { termo: "Curso d'água", definicao: "Rio, riacho ou córrego. Na plataforma vem da Base Cartográfica 1:250.000 do IBGE (2025), com nome e regime (permanente ou temporário) de cada trecho." }
+    { termo: "Curso d'água", definicao: "Rio, riacho ou córrego. Na plataforma vem da Base Cartográfica 1:250.000 do IBGE (2025), com nome e regime (permanente ou temporário) de cada trecho." },
+    { termo: "SIN (Sistema Interligado Nacional)", definicao: "Sistema de produção e transmissão de energia elétrica que interliga quase todo o Brasil, permitindo transferir energia entre regiões. É coordenado pelo ONS." },
+    { termo: "ONS (Operador Nacional do Sistema Elétrico)", definicao: "Entidade responsável por coordenar e controlar a operação da geração e da transmissão de energia no SIN. A base SINDAT/SINMaps do ONS é a fonte da rede de energia da plataforma." },
+    { termo: "Linha de transmissão", definicao: "Linha de alta tensão que transporta energia das usinas às subestações e aos centros de consumo. Na plataforma, o traçado é esquemático (trechos retos entre subestações) e a cor indica a tensão: 500 kV em vermelho e 230 kV em verde; tracejada quando planejada." },
+    { termo: "Subestação", definicao: "Instalação que eleva ou rebaixa a tensão e conecta linhas, usinas e redes de distribuição. As subestações coletoras reúnem a energia de parques eólicos e solares para injetá-la no SIN." },
+    { termo: "Tensão (kV)", definicao: "Diferença de potencial elétrico de uma linha, em quilovolts. Quanto maior a tensão, maior a capacidade de transportar energia a longas distâncias." },
+    { termo: "Rede Básica", definicao: "Conjunto das instalações de transmissão do SIN com tensão igual ou superior a 230 kV." },
+    { termo: "Instalação planejada", definicao: "Linha ou subestação ainda sem data de entrada em operação na base do ONS; aparece tracejada (linhas) ou com círculo branco (subestações)." }
   ],
 
   perguntas: [
