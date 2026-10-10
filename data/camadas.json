@@ -1,6 +1,6 @@
 {
  "title": "Plataforma Avança Chapada Bahia",
- "generated": "2026-10-10T10:25:09",
+ "generated": "2026-10-10T11:47:29",
  "boundary": "territorio-de-identidade-chapada-diamantina",
  "topics": [
   {
@@ -645,6 +645,86 @@
       "uso": "Uso",
       "municipios": "Municípios atravessados",
       "ext_ti_km": "Extensão no território (km)"
+     }
+    },
+    {
+     "id": "conjuntos-eletricos-dec-e-fec-2025-aneel",
+     "name": "Conjuntos elétricos – DEC e FEC 2025 (ANEEL)",
+     "sub": "Distribuição – qualidade do fornecimento (ANEEL)",
+     "file": "data/conjuntos-eletricos-dec-e-fec-2025-aneel.geojson",
+     "geom": "polygon",
+     "visible": false,
+     "count": 20,
+     "style": {
+      "type": "graduated",
+      "field": "dec_pct",
+      "classes": [
+       {
+        "min": 0.0,
+        "max": 50.0,
+        "label": "DEC até 50% do limite",
+        "sym": {
+         "fill": "#1a9641",
+         "fillOpacity": 0.59,
+         "stroke": "#5a5a5a",
+         "strokeOpacity": 1.0,
+         "width": 1.1
+        }
+       },
+       {
+        "min": 50.0,
+        "max": 75.0,
+        "label": "DEC de 50 a 75% do limite",
+        "sym": {
+         "fill": "#a6d96a",
+         "fillOpacity": 0.59,
+         "stroke": "#5a5a5a",
+         "strokeOpacity": 1.0,
+         "width": 1.1
+        }
+       },
+       {
+        "min": 75.0,
+        "max": 100.0,
+        "label": "DEC de 75 a 100% do limite",
+        "sym": {
+         "fill": "#fdae61",
+         "fillOpacity": 0.59,
+         "stroke": "#5a5a5a",
+         "strokeOpacity": 1.0,
+         "width": 1.1
+        }
+       },
+       {
+        "min": 100.0,
+        "max": 10000.0,
+        "label": "DEC acima do limite",
+        "sym": {
+         "fill": "#d7191c",
+         "fillOpacity": 0.59,
+         "stroke": "#5a5a5a",
+         "strokeOpacity": 1.0,
+         "width": 1.1
+        }
+       }
+      ]
+     },
+     "aliases": {
+      "cod_conj": "Código do conjunto",
+      "conjunto": "Conjunto elétrico",
+      "distrib": "Distribuidora",
+      "ano": "Ano de apuração",
+      "dec_h": "DEC apurado (horas/ano)",
+      "dec_lim": "Limite de DEC (horas/ano)",
+      "fec_n": "FEC apurado (interrupções/ano)",
+      "fec_lim": "Limite de FEC (interrupções/ano)",
+      "dec_pct": "DEC em % do limite",
+      "fec_pct": "FEC em % do limite",
+      "situacao": "Situação em 2025",
+      "num_con": "Consumidores do conjunto (dez/2025)",
+      "area_ti_km": "Área dentro do território (km²)",
+      "base_geo": "Data-base do limite geográfico",
+      "fonte": "Fonte"
      }
     }
    ]
@@ -1613,6 +1693,98 @@
       "faixa": "Faixa de temperatura máxima",
       "t_min": "Mínimo da faixa (°C)",
       "t_max": "Máximo da faixa (°C)"
+     }
+    }
+   ]
+  },
+  {
+   "name": "Indicadores sociais",
+   "layers": [
+    {
+     "id": "vulnerabilidade-social-ivs-2010-ipea",
+     "name": "Vulnerabilidade social – IVS 2010 (Ipea)",
+     "sub": null,
+     "file": "data/vulnerabilidade-social-ivs-2010-ipea.geojson",
+     "geom": "polygon",
+     "visible": false,
+     "count": 24,
+     "style": {
+      "type": "graduated",
+      "field": "ivs",
+      "classes": [
+       {
+        "min": 0.0,
+        "max": 0.2,
+        "label": "Muito baixa (0 a 0,200)",
+        "sym": {
+         "fill": "#1a9641",
+         "fillOpacity": 0.55,
+         "stroke": "#5a5a5a",
+         "strokeOpacity": 1.0,
+         "width": 1.1
+        }
+       },
+       {
+        "min": 0.2001,
+        "max": 0.3,
+        "label": "Baixa (0,201 a 0,300)",
+        "sym": {
+         "fill": "#a6d96a",
+         "fillOpacity": 0.55,
+         "stroke": "#5a5a5a",
+         "strokeOpacity": 1.0,
+         "width": 1.1
+        }
+       },
+       {
+        "min": 0.3001,
+        "max": 0.4,
+        "label": "Média (0,301 a 0,400)",
+        "sym": {
+         "fill": "#ffffbf",
+         "fillOpacity": 0.55,
+         "stroke": "#5a5a5a",
+         "strokeOpacity": 1.0,
+         "width": 1.1
+        }
+       },
+       {
+        "min": 0.4001,
+        "max": 0.5,
+        "label": "Alta (0,401 a 0,500)",
+        "sym": {
+         "fill": "#fdae61",
+         "fillOpacity": 0.55,
+         "stroke": "#5a5a5a",
+         "strokeOpacity": 1.0,
+         "width": 1.1
+        }
+       },
+       {
+        "min": 0.5001,
+        "max": 1.0,
+        "label": "Muito alta (0,501 a 1)",
+        "sym": {
+         "fill": "#d7191c",
+         "fillOpacity": 0.55,
+         "stroke": "#5a5a5a",
+         "strokeOpacity": 1.0,
+         "width": 1.1
+        }
+       }
+      ]
+     },
+     "aliases": {
+      "MUNICIPIO": "Município",
+      "Codigo": "Código IBGE",
+      "ivs": "IVS 2010",
+      "faixa": "Faixa de vulnerabilidade",
+      "ivs_infra": "IVS Infraestrutura urbana",
+      "ivs_cap_h": "IVS Capital humano",
+      "ivs_renda": "IVS Renda e trabalho",
+      "ivs_2000": "IVS 2000",
+      "ano": "Ano de referência",
+      "fonte": "Fonte"
      }
     }
    ]
