@@ -42,11 +42,13 @@
   }
   const hideStatus = () => (status.hidden = true);
 
-  // enquadra descontando o painel lateral aberto (no computador)
+  // enquadra descontando os painéis laterais abertos (no computador)
   function fitView(bounds, maxZoom = 15) {
     const p = document.getElementById("panel");
-    const side = p && !p.classList.contains("closed") && window.innerWidth > 860 ? p.offsetWidth + 80 : 20;
-    map.fitBounds(bounds, { paddingTopLeft: [side, 70], paddingBottomRight: [20, 20], maxZoom });
+    const ind = document.getElementById("ind");
+    const left = p && !p.classList.contains("closed") && window.innerWidth > 860 ? p.offsetWidth + 64 : 24;
+    const right = ind && !ind.hidden && window.innerWidth > 860 ? ind.offsetWidth + 28 : 24;
+    map.fitBounds(bounds, { paddingTopLeft: [left, 24], paddingBottomRight: [right, 24], maxZoom });
   }
 
   // ------------------------------------------------------------------ estilos
@@ -176,7 +178,7 @@
       for (const p of polys) holes.push(p[0].map(([x, y]) => [y, x]));
     }
     const world = [[-89, -179], [-89, 179], [89, 179], [89, -179]];
-    L.polygon([world, ...holes], {
+    const mask = L.polygon([world, ...holes], {
       pane: "mask", renderer: renderers.mask, stroke: false, fillColor: "#ffffff", fillOpacity: .5, interactive: false,
     }).addTo(map);
     const outline = L.geoJSON(data, {
@@ -184,6 +186,15 @@
       style: { color: "#1d5e27", weight: 3, fill: false, opacity: .95 },
     }).addTo(map);
     territoryBounds = outline.getBounds();
+    const st = state.get(def.id);
+    if (st) {
+      const grp = L.layerGroup([mask, outline]);
+      grp.getBounds = () => territoryBounds;
+      grp.bringToFront = () => outline.bringToFront();
+      st.layer = grp;
+      st.on = true;
+      syncRow(st);
+    }
     fitView(territoryBounds);
   }
 
@@ -478,14 +489,15 @@
     renderTopics();
 
     const boundary = manifest.boundary && state.get(manifest.boundary);
-    if (boundary) drawTerritory(boundary.def).catch(console.error);
-    if ((manifest.context || []).length) drawContext(manifest.context).catch(console.error);
+    if ((manifest.context || []).length) await drawContext(manifest.context).catch(console.error);
+    if (boundary) await drawTerritory(boundary.def).catch(console.error);
+    if (territoryBounds && territoryBounds.isValid()) fitView(territoryBounds);
 
-    // A plataforma abre sempre sem camadas ligadas (só o contorno do território):
-    // quem consulta escolhe o que quer ver. A visibilidade do QGIS não é aplicada.
+    // A plataforma abre sempre apenas com o território ativo e centralizado:
+    // quem consulta escolhe o que quer ver.
 
-    // ponte para o relatório em PDF (assets/relatorio.js)
-    window.AVANCA = { manifest, conteudo: C, esc, fmt, showStatus, hideStatus, map };
+    // ponte para o relatório em PDF (assets/relatorio.js) e indicadores (assets/indicadores.js)
+    window.AVANCA = { manifest, conteudo: C, esc, fmt, showStatus, hideStatus, map, fitView, getTerritoryBounds: () => territoryBounds };
     document.dispatchEvent(new Event("avanca:pronto"));
   }
   init();

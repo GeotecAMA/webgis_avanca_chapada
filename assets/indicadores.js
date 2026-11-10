@@ -140,8 +140,12 @@
     painel.hidden = !on;
     document.body.classList.toggle("ind-aberto", on);
     $("#tInd")?.classList.toggle("on", on);
-    if (camada) { if (on) camada.addTo(map); else map.removeLayer(camada); }
-    setTimeout(() => map.invalidateSize(), 0);
+    if (camada) { if (on) { camada.addTo(map); pinta(); } else map.removeLayer(camada); }
+    setTimeout(() => {
+      map.invalidateSize({ pan: false });
+      const b = A?.getTerritoryBounds?.();
+      if (b && b.isValid() && !sel) A.fitView(b);
+    }, 0);
   }
 
   // ---------------------------------------------------------------- eventos
@@ -185,7 +189,11 @@
     }
     try { await carregaMunicipios(); } catch (e) { console.error(e); }
     render();
-    abre(window.matchMedia("(min-width: 861px)").matches);   // aberto no computador, fechado no celular
+    abre(false);   // indicadores visíveis apenas quando ativados pelo usuário
+    $("#topics")?.addEventListener("change", e => {
+      if (e.target.dataset.id === "potencial-de-biogas-residuos-solidos-urbanos-2025") abre(e.target.checked);
+    });
+    $("#clearAll")?.addEventListener("click", () => abre(false));
   }
   if (window.AVANCA) inicia(); else document.addEventListener("avanca:pronto", inicia, { once: true });
 })();
