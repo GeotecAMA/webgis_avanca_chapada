@@ -260,7 +260,7 @@
           </label>
           <span class="actions">
             <button class="icon-btn" type="button" data-zoom="${d.id}" title="Aproximar da camada" aria-label="Aproximar da camada">${ICON.zoom}</button>
-            <a class="icon-btn" href="${esc(d.file)}" download title="Baixar GeoJSON" aria-label="Baixar GeoJSON">${ICON.download}</a>
+            ${d.download === false ? "" : `<a class="icon-btn" href="${esc(d.file)}" download title="Baixar GeoJSON" aria-label="Baixar GeoJSON">${ICON.download}</a>`}
           </span>
         </div>${legend}
       </li>`;

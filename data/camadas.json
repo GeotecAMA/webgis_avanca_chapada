@@ -1,6 +1,6 @@
 {
  "title": "Plataforma Avança Chapada Bahia",
- "generated": "2026-10-10T12:19:07",
+ "generated": "2026-11-10T07:52:08",
  "boundary": "territorio-de-identidade-chapada-diamantina",
  "topics": [
   {
@@ -12,7 +12,7 @@
      "sub": null,
      "file": "data/territorio-de-identidade-chapada-diamantina.geojson",
      "geom": "polygon",
-     "visible": true,
+     "visible": false,
      "count": 1,
      "style": {
       "type": "single",
@@ -119,21 +119,118 @@
       "MUNICIPIO": "Município",
       "Codigo": "Código IBGE",
       "status": "Situação do dado",
-      "apl_principal": "Arranjo produtivo principal",
-      "apl_secundario": "Arranjo produtivo secundário",
-      "residuo_principal": "Principal resíduo para biogás",
-      "residuos_t_ano": "Resíduos totais (t/ano)",
-      "biogas_agricola": "Biogás – resíduos agrícolas (Nm³/ano)",
-      "biogas_pecuaria": "Biogás – pecuária (Nm³/ano)",
+      "apl_princi": "Arranjo produtivo principal",
+      "apl_secund": "Arranjo produtivo secundário",
+      "residuo_pr": "Principal resíduo para biogás",
+      "residuos_t": "Resíduos totais (t/ano)",
+      "biogas_agr": "Biogás – resíduos agrícolas (Nm³/ano)",
+      "biogas_pec": "Biogás – pecuária (Nm³/ano)",
       "biogas_rsu": "Biogás – RSU/FORSU (Nm³/ano)",
-      "biogas_esgoto": "Biogás – esgoto (Nm³/ano)",
-      "biogas_agroindustria": "Biogás – agroindústria (Nm³/ano)",
-      "energia_mwh_ano": "Energia elétrica equivalente (MWh/ano)",
-      "biometano_nm3_ano": "Biometano equivalente (Nm³/ano)",
+      "biogas_esg": "Biogás – esgoto (Nm³/ano)",
+      "biogas_a_1": "Biogás – agroindústria (Nm³/ano)",
+      "energia_mw": "Energia elétrica equivalente (MWh/ano)",
+      "biometano_": "Biometano equivalente (Nm³/ano)",
       "fonte": "Fonte / método",
       "observacao": "Observação",
-      "biogas_total": "Biogás – total (Nm³/ano)"
+      "biogas_tot": "Biogás – total (Nm³/ano)"
      }
+    },
+    {
+     "id": "potencial-de-biogas-residuos-solidos-urbanos-2025",
+     "name": "Potencial de biogás – resíduos sólidos urbanos (2025)",
+     "sub": null,
+     "file": "data/potencial-de-biogas-residuos-solidos-urbanos-2025.geojson",
+     "geom": "polygon",
+     "visible": false,
+     "count": 24,
+     "style": {
+      "type": "graduated",
+      "field": "biogas_m3d",
+      "classes": [
+       {
+        "min": 0.0,
+        "max": 200.0,
+        "label": "até 200 Nm³/dia",
+        "sym": {
+         "fill": "#fff3d6",
+         "fillOpacity": 0.55,
+         "stroke": "#ffffff",
+         "strokeOpacity": 0.85,
+         "width": 1.1
+        }
+       },
+       {
+        "min": 200.0,
+        "max": 300.0,
+        "label": "200 a 300 Nm³/dia",
+        "sym": {
+         "fill": "#fdd49e",
+         "fillOpacity": 0.55,
+         "stroke": "#ffffff",
+         "strokeOpacity": 0.85,
+         "width": 1.1
+        }
+       },
+       {
+        "min": 300.0,
+        "max": 450.0,
+        "label": "300 a 450 Nm³/dia",
+        "sym": {
+         "fill": "#fc8d59",
+         "fillOpacity": 0.55,
+         "stroke": "#ffffff",
+         "strokeOpacity": 0.85,
+         "width": 1.1
+        }
+       },
+       {
+        "min": 450.0,
+        "max": 700.0,
+        "label": "450 a 700 Nm³/dia",
+        "sym": {
+         "fill": "#d7301f",
+         "fillOpacity": 0.55,
+         "stroke": "#ffffff",
+         "strokeOpacity": 0.85,
+         "width": 1.1
+        }
+       },
+       {
+        "min": 700.0,
+        "max": 5000.0,
+        "label": "acima de 700 Nm³/dia",
+        "sym": {
+         "fill": "#7f0000",
+         "fillOpacity": 0.55,
+         "stroke": "#ffffff",
+         "strokeOpacity": 0.85,
+         "width": 1.1
+        }
+       }
+      ]
+     },
+     "aliases": {
+      "MUNICIPIO": "Município",
+      "Codigo": "Código IBGE",
+      "ano_ref": "Ano de referência",
+      "pop": "População projetada (hab)",
+      "rs_total": "Resíduos sólidos totais (t/dia)",
+      "rsd_t_dia": "Resíduo domiciliar – RSD (t/dia)",
+      "rsd_m3_dia": "Volume de RSD (m³/dia)",
+      "umidos_pct": "Resíduos úmidos no RSD (%)",
+      "forsu_t_d": "Fração orgânica – FORSU (t/dia)",
+      "biogas_m3d": "Biogás (Nm³/dia)",
+      "ch4_m3d": "Metano (Nm³/dia)",
+      "energ_mwh": "Energia elétrica (MWh/ano)",
+      "potenc_kw": "Potência elétrica média (kW)",
+      "biomet_k": "Biometano (mil Nm³/ano)",
+      "biog_2035": "Biogás 2035 (Nm³/dia)",
+      "biog_2055": "Biogás 2055 (Nm³/dia)",
+      "situacao": "Situação do dado",
+      "fonte_grav": "Fonte da gravimetria",
+      "metodo": "Método"
+     },
+     "download": false
     }
    ]
   },
@@ -146,7 +243,7 @@
      "sub": null,
      "file": "data/rodovias-federais-seinfra.geojson",
      "geom": "line",
-     "visible": false,
+     "visible": true,
      "count": 43,
      "style": {
       "type": "categorized",
@@ -919,8 +1016,8 @@
      "sub": "Lixões",
      "file": "data/lixoes-vazadouros-a-ceu-aberto.geojson",
      "geom": "point",
-     "visible": false,
-     "count": 34,
+     "visible": true,
+     "count": 33,
      "style": {
       "type": "single",
       "sym": {
@@ -952,7 +1049,7 @@
      "sub": null,
      "file": "data/unidades-de-conservacao.geojson",
      "geom": "polygon",
-     "visible": false,
+     "visible": true,
      "count": 34,
      "style": {
       "type": "categorized",
@@ -1439,8 +1536,8 @@
         "value": "Muito alto",
         "label": "Muito alto",
         "sym": {
-         "fill": "#e90700",
-         "fillOpacity": 0.35,
+         "fill": "#070059",
+         "fillOpacity": 0.55,
          "stroke": "#e90700",
          "strokeOpacity": 1.0,
          "width": 2.3
@@ -1450,9 +1547,20 @@
         "value": "Alto",
         "label": "Alto",
         "sym": {
-         "fill": "#df9007",
-         "fillOpacity": 0.35,
+         "fill": "#900759",
+         "fillOpacity": 0.55,
          "stroke": "#df9007",
+         "strokeOpacity": 1.0,
+         "width": 2.3
+        }
+       },
+       {
+        "value": "Médio",
+        "label": "Médio",
+        "sym": {
+         "fill": "#ff0759",
+         "fillOpacity": 0.55,
+         "stroke": "#dfff07",
          "strokeOpacity": 1.0,
          "width": 2.3
         }
@@ -1487,8 +1595,8 @@
      "style": {
       "type": "single",
       "sym": {
-       "fill": "#0000ff",
-       "fillOpacity": 0.15,
+       "fill": "#00ff26",
+       "fillOpacity": 0.0,
        "stroke": "#0000cd",
        "strokeOpacity": 1.0,
        "width": 1.5
@@ -1510,8 +1618,8 @@
      "style": {
       "type": "single",
       "sym": {
-       "fill": "#e8b050",
-       "fillOpacity": 0.43,
+       "fill": "#b05099",
+       "fillOpacity": 0.55,
        "stroke": "#b07a1f",
        "strokeOpacity": 1.0,
        "width": 1.9
@@ -1703,7 +1811,7 @@
    "layers": [
     {
      "id": "vulnerabilidade-social-ivs-2010-ipea",
-     "name": "Vulnerabilidade social – IVS 2010 (Ipea)",
+     "name": "Vulnerabilidade social - IVS 2010 (Ipea)",
      "sub": null,
      "file": "data/vulnerabilidade-social-ivs-2010-ipea.geojson",
      "geom": "polygon",
@@ -1721,7 +1829,7 @@
          "fill": "#1a9641",
          "fillOpacity": 0.55,
          "stroke": "#5a5a5a",
-         "strokeOpacity": 1.0,
+         "strokeOpacity": 0.55,
          "width": 1.1
         }
        },
@@ -1733,7 +1841,7 @@
          "fill": "#a6d96a",
          "fillOpacity": 0.55,
          "stroke": "#5a5a5a",
-         "strokeOpacity": 1.0,
+         "strokeOpacity": 0.55,
          "width": 1.1
         }
        },
@@ -1745,7 +1853,7 @@
          "fill": "#ffffbf",
          "fillOpacity": 0.55,
          "stroke": "#5a5a5a",
-         "strokeOpacity": 1.0,
+         "strokeOpacity": 0.55,
          "width": 1.1
         }
        },
@@ -1757,7 +1865,7 @@
          "fill": "#fdae61",
          "fillOpacity": 0.55,
          "stroke": "#5a5a5a",
-         "strokeOpacity": 1.0,
+         "strokeOpacity": 0.55,
          "width": 1.1
         }
        },
@@ -1769,7 +1877,7 @@
          "fill": "#d7191c",
          "fillOpacity": 0.55,
          "stroke": "#5a5a5a",
-         "strokeOpacity": 1.0,
+         "strokeOpacity": 0.55,
          "width": 1.1
         }
        }
@@ -1797,14 +1905,14 @@
    "url": "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
    "maxZoom": 19,
    "attribution": "© colaboradores do OpenStreetMap",
-   "visible": true
+   "visible": false
   },
   {
    "name": "Google Satélite",
    "url": "https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}",
    "maxZoom": 19,
    "attribution": "© Google",
-   "visible": false
+   "visible": true
   }
  ],
  "context": [
