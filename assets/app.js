@@ -135,6 +135,7 @@
     if (!st || st.on === on) return;
     st.on = on;
     syncRow(st);
+    document.dispatchEvent(new CustomEvent("avanca:camada", { detail: { id, on } }));
     if (!on) { if (st.layer) map.removeLayer(st.layer); return; }
     if (!st.layer) {
       if (st.loading) return;
@@ -178,7 +179,7 @@
       for (const p of polys) holes.push(p[0].map(([x, y]) => [y, x]));
     }
     const world = [[-89, -179], [-89, 179], [89, 179], [89, -179]];
-    const mask = L.polygon([world, ...holes], {
+    L.polygon([world, ...holes], {
       pane: "mask", renderer: renderers.mask, stroke: false, fillColor: "#ffffff", fillOpacity: .5, interactive: false,
     }).addTo(map);
     const outline = L.geoJSON(data, {
@@ -186,15 +187,6 @@
       style: { color: "#1d5e27", weight: 3, fill: false, opacity: .95 },
     }).addTo(map);
     territoryBounds = outline.getBounds();
-    const st = state.get(def.id);
-    if (st) {
-      const grp = L.layerGroup([mask, outline]);
-      grp.getBounds = () => territoryBounds;
-      grp.bringToFront = () => outline.bringToFront();
-      st.layer = grp;
-      st.on = true;
-      syncRow(st);
-    }
     fitView(territoryBounds);
   }
 
@@ -497,7 +489,7 @@
     // quem consulta escolhe o que quer ver.
 
     // ponte para o relatório em PDF (assets/relatorio.js) e indicadores (assets/indicadores.js)
-    window.AVANCA = { manifest, conteudo: C, esc, fmt, showStatus, hideStatus, map, fitView, getTerritoryBounds: () => territoryBounds };
+    window.AVANCA = { manifest, conteudo: C, esc, fmt, showStatus, hideStatus, map, fitView, setLayer, state, getTerritoryBounds: () => territoryBounds };
     document.dispatchEvent(new Event("avanca:pronto"));
   }
   init();

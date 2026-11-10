@@ -6,6 +6,8 @@
 (() => {
   "use strict";
   const ARQ = "indicadores/residuos_biogas.json";
+  const ID_CAMADA = "potencial-de-biogas-residuos-solidos-urbanos-2025";
+  const ID_ARRANJOS = "arranjos-produtivos-e-potencial-de-biogas";
   const CORES = ["#fff3d6", "#fdd49e", "#fc8d59", "#d7301f", "#7f0000"];   // sequencial 5 classes
   const $ = (s, el = document) => el.querySelector(s);
   const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
@@ -136,11 +138,15 @@
     a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
   }
 
-  function abre(on) {
+  function abre(on, syncCamada = true) {
     painel.hidden = !on;
     document.body.classList.toggle("ind-aberto", on);
     $("#tInd")?.classList.toggle("on", on);
     if (camada) { if (on) { camada.addTo(map); pinta(); } else map.removeLayer(camada); }
+    if (syncCamada) {
+      A?.setLayer?.(ID_CAMADA, on);
+      if (!on && A?.state?.get(ID_ARRANJOS)?.on) A.setLayer(ID_ARRANJOS, false);
+    }
     setTimeout(() => {
       map.invalidateSize({ pan: false });
       const b = A?.getTerritoryBounds?.();
@@ -188,12 +194,28 @@
       tb.appendChild(b);
     }
     try { await carregaMunicipios(); } catch (e) { console.error(e); }
+    const stBio = A?.state?.get(ID_CAMADA);
+    if (stBio && camada) {
+      camada.bringToFront = () => camada.eachLayer(l => l.bringToFront());
+      stBio.layer = camada;
+    }
     render();
-    abre(false);   // indicadores visíveis apenas quando ativados pelo usuário
-    $("#topics")?.addEventListener("change", e => {
-      if (e.target.dataset.id === "potencial-de-biogas-residuos-solidos-urbanos-2025") abre(e.target.checked);
+    abre(false, false);   // indicadores visíveis apenas quando ativados pelo usuário
+    document.addEventListener("avanca:camada", e => {
+      const { id, on } = e.detail || {};
+      if (id === ID_CAMADA) {
+        if (on) { colorir = true; render(); }
+        abre(on, false);
+      } else if (id === ID_ARRANJOS) {
+        if (on) {
+          if (!A?.state?.get(ID_CAMADA)?.on) { colorir = false; render(); }
+          abre(true, false);
+        } else if (!A?.state?.get(ID_CAMADA)?.on) {
+          abre(false, false);
+        }
+      }
     });
-    $("#clearAll")?.addEventListener("click", () => abre(false));
+    $("#clearAll")?.addEventListener("click", () => abre(false, false));
   }
   if (window.AVANCA) inicia(); else document.addEventListener("avanca:pronto", inicia, { once: true });
 })();

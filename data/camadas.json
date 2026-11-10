@@ -12,7 +12,7 @@
      "sub": null,
      "file": "data/territorio-de-identidade-chapada-diamantina.geojson",
      "geom": "polygon",
-     "visible": true,
+     "visible": false,
      "count": 1,
      "style": {
       "type": "single",
