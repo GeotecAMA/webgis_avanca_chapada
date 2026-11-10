@@ -1,3 +1,6 @@
 desktop.ini
 Thumbs.db
 .perfil_cache.json
+AGENTS.md
+agents/
+.claude/
